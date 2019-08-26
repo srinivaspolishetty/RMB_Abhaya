@@ -1,0 +1,103 @@
+<div class="modal-header">
+  <h5 class="modal-title">User Details of {{selectedUserData.username}}</h5>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.close('refreshContent')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body p-r-2">
+  <div class="row">
+
+    <div class="col-md-6">
+      <h5>ID</h5>
+      <h4>{{selectedUserData.userId}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>User Name</h5>
+      <h4>{{selectedUserData.username}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>First Name</h5>
+      <h4>{{selectedUserData.firstName}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Last Name</h5>
+      <h4>{{selectedUserData.lastName}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Mobile No</h5>
+      <h4>{{selectedUserData.mobileNumber}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Email Id</h5>
+      <h4>{{selectedUserData.emailId}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Department</h5>
+      <h4>{{selectedUserData.departmentName}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>State</h5>
+      <h4>{{selectedUserData.stateName}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Role</h5>
+      <h4>{{selectedUserData.rolesVO[0].name}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Status</h5>
+      <h4>{{selectedUserData.isEnabled == true ? 'Active' : 'InActive'}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Created Date</h5>
+      <h4>{{selectedUserData.createdDate}}</h4>
+    </div>
+
+  </div>
+
+
+
+  <!-- <div class="row">
+    <form>
+      <div class="row p-t-2">
+        <div class="col-md-4 form-group">
+          <label class="required">Vehicle Registration No</label>
+          <input type="text" class="form-control" />
+          <span class="separator"> </span>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="required">Chassis Number</label>
+          <input type="text" class="form-control" />
+          <span class="separator"> </span>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="required">Engine Number</label>
+          <input type="text" class="form-control" />
+          <span class="separator"> </span>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="required">Vehicle Make</label>
+          <input type="text" class="form-control" />
+          <span class="separator"> </span>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="required">Vehicle Model</label>
+          <input type="text" class="form-control" />
+          <span class="separator"> </span>
+        </div>
+
+        <div class="col-md-4 form-group">
+          <label class="required">Mobile Number</label>
+          <input type="text" class="form-control" />
+          <span class="separator"> </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <button type="submit" class="btn-submit m-t-1">SUBMIT</button>
+        </div>
+      </div>
+    </form>
+  </div> -->
+
+</div>

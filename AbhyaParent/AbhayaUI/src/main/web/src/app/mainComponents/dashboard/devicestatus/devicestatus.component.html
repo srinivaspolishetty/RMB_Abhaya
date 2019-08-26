@@ -1,0 +1,44 @@
+<div class="row no-gutters bdr-bottom p-t-4 p-b-4" *ngIf="isDataExists">
+    <div class="col-md-4">
+      <div class="content-left clearfix">
+        <img src="assets/images/ab-devicestatus.svg">
+      </div>
+      <div class="content-right">
+        <h6 class="p-t-2">Device</h6>
+        <h6>Status</h6>
+        </div>
+    </div>
+    <div class="col-md-3">
+      <h6 class="p-t-2">Communicating</h6>
+      <a (click)="deviceStatusRoute('COMMUNICATING')">
+          <h5 class="cursor-hand">{{COMMUNICATING.on}}</h5>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <h6 class="p-t-2">Not Communicating</h6>
+      <a (click)="deviceStatusRoute('NOTCOMMUNICATING')">
+        <h5 class="cursor-hand">{{COMMUNICATING.off}}</h5>
+      </a>
+    </div>
+    <div class="col-md-2">
+        <h6 class="p-t-2">Low Battery</h6>
+        <a (click)="lowBatteryRouter('CRITICAL')">
+          <h5 class="cursor-hand">{{BATTERY_PERCENTAGE.off}}</h5>
+        </a>
+      </div>
+      <div class="col-md-4">
+        </div>
+          <div class="col-md-3">
+            <h6 class="p-t-2">Ignation ON</h6>
+            <a (click)="ignationRoute('ON')">
+              <h5 class="cursor-hand">{{IGNITION.on}}</h5>
+            </a>
+          </div>
+          <div class="col-md-3">
+            <h6 class="p-t-2">Ignation OFF</h6>
+            <a (click)="ignationRoute('OFF')">
+              <h5 class="cursor-hand">{{IGNITION.off}}</h5>
+            </a>
+          </div>
+  </div>
+  <app-nodata class="w-100p" *ngIf="!isDataExists" [noDataText]='noDataText'></app-nodata>

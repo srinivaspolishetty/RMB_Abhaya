@@ -1,0 +1,33 @@
+export class deviceCommunicationModel {
+    public batteryPercentage: Number;
+    public createdDate: string;
+    public deviceCommunicationId: Number;
+    public emergencyStatus: string;
+    public engineStatus: string;
+    public gsmSignalStrength: string;
+    public ignitionStatus: string;
+    public imeiNumber: string;
+    public internalBatteryVoltage:string;
+    public isDeviceOverSpeed: string;
+    public langitude: string;
+    public latitude: string;
+    public location: string;
+    public lowBatteryThreshold: string;
+    public mainPowerStatus : string;
+    public memoryPercentage: string;
+    public movement: string;
+    public networkDate: string;
+    public networkTime: string;
+    public prevLangitude: string;
+    public prevLatitude: string;
+    public prevNetworkDate: string;
+    public prevNetworkTime: string;
+    public speed: string;
+    public status: string;
+    public tamperAlert: string;
+    public updatedDate: string;
+    public vehicleMode: string;
+    public vehicleModeId: string;
+    public vehicleRegNo: string;
+    public serialNumber:string;
+}

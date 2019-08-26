@@ -1,0 +1,200 @@
+<div class="container top-header p-b-3">
+  <div class="row head-block no-gutters bdr-bottom m-b-3 p-t-1">
+    <div class="col-md-5 p-l-0">
+      <h4>Trip Tracking</h4>
+    </div>
+    <div class="col-md-7 p-r-0 text-right">
+
+    </div>
+    <div class="col-md-12 p-a-0 p-t-1">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a class="text-abhaya" [routerLink]="['/dashboard']">Home</a></li>
+          <li class="breadcrumb-item active text-secondary" aria-current="page">Trip Tracking</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div class="trip-tracking" *ngIf="isDataExists">
+    <!-- <div class="trip-tracking-vehicle">
+      <div class="vehicle">
+        <div class="vehicle-block-left">
+          <img src="assets/images/ic_VehDevicemap.svg">
+        </div>
+        <div class="vehicle-block-right">
+          <h6>
+            Vehicle No
+          </h6>
+          <h5>
+            AP30A5994
+          </h5>
+        </div>
+      </div>
+      <div class="vehicle">
+          <div class="vehicle-block-left">
+            <img src="assets/images/ic_VehDevicemap.svg">
+          </div>
+          <div class="vehicle-block-right">
+            <h6>
+              Vehicle No
+            </h6>
+            <h5>
+              AP30A5994
+            </h5>
+          </div>
+        </div>
+        <div class="vehicle">
+            <div class="vehicle-block-left">
+              <img src="assets/images/ic_VehDevicemap.svg">
+            </div>
+            <div class="vehicle-block-right">
+              <h6>
+                Vehicle No
+              </h6>
+              <h5>
+                AP30A5994
+              </h5>
+            </div>
+          </div>
+          <div class="vehicle">
+              <div class="vehicle-block-left">
+                <img src="assets/images/ic_VehDevicemap.svg">
+              </div>
+              <div class="vehicle-block-right">
+                <h6>
+                  Vehicle No
+                </h6>
+                <h5>
+                  AP30A5994
+                </h5>
+              </div>
+            </div>
+            <div class="vehicle">
+                <div class="vehicle-block-left">
+                  <img src="assets/images/ic_VehDevicemap.svg">
+                </div>
+                <div class="vehicle-block-right">
+                  <h6>
+                    Vehicle No
+                  </h6>
+                  <h5>
+                    AP30A5994
+                  </h5>
+                </div>
+              </div>
+              <div class="vehicle">
+                  <div class="vehicle-block-left">
+                    <img src="assets/images/ic_VehDevicemap.svg">
+                  </div>
+                  <div class="vehicle-block-right">
+                    <h6>
+                      Vehicle No
+                    </h6>
+                    <h5>
+                      AP30A5994
+                    </h5>
+                  </div>
+                </div>
+    </div> -->
+    <div class="trip-tracking-left">
+      <h5>Trip Details</h5>
+      <div class="trip-tracking-left-content">
+         
+          <!-- <div class="onoffswitch">
+              <span class="switch-text">Engine Status</span>
+              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+              <label class="onoffswitch-label" for="myonoffswitch">
+                  <span class="onoffswitch-inner"></span>
+                  <span class="onoffswitch-switch"></span>
+              </label>
+          </div> -->
+        <div *ngIf="userDetails.departmentName == 'Police' && tripDetails.tripClosed == false"class="float-right">
+        <span class="switch-red">Engine Status</span>
+        <label class="switch" style="margin-top:0px; margin-bottom:0px;">
+          <input type="checkbox" [ngModel]="engineStatus" [checked]="engineStatus" (click)="engineOnOff(engineStatus)">
+          <div class="slider round">
+          <span class="off"></span>
+         
+          </div>
+        </label>
+    </div>
+        <h6>Citizen Mobile No:</h6>
+        <h4>{{tripDetails.citizenMobileNumber}}</h4>
+      </div>
+      <div class="trip-tracking-left-content p-t-1">
+        <h6>Source :</h6>
+        <h4>{{tripDetails.sourceLocation}}</h4>
+      </div>
+      <div class="trip-tracking-left-content p-t-1">
+        <h6>Destination :</h6>
+        <h4>{{tripDetails.destiLocation}}</h4>
+      </div>
+      <div class="trip-driver p-t-3">
+        <ul>
+          <li  [ngClass]="{ 'active': isDriverDetails}" >
+            <a (click)="changeView(true)">
+              Driver Details
+            </a>
+          </li>
+          <li  [ngClass]="{ 'active': !isDriverDetails}" >
+            <a (click)="changeView(false)">
+              Vehicle Details
+            </a>
+          </li>
+        </ul>
+        <div class="trip-driver-details" *ngIf="isDriverDetails">
+          <div class="trip-driver-details-left">
+              <img *ngIf="driverImage !== ''" [src]="driverImage">
+            <img *ngIf="driverImage == ''" src="assets/images/ic_driverduty.svg" />
+          </div>
+          <div class="trip-driver-details-right">
+            <div class="trip-driver-details-right-content p-a-0">
+              <h6>Driver Name :</h6>
+              <h4>{{tripDetails.driverName}}</h4>
+            </div>
+            <div class="trip-driver-details-right-content p-a-0">
+              <h6>DL Number :</h6>
+              <h4>{{tripDetails.dlNumber}}</h4>
+            </div>
+            <div class="trip-driver-details-right-content p-a-0">
+              <h6>Driver Mobile No :</h6>
+              <h4>{{tripDetails.driverContactNumber}}</h4>
+            </div>
+          </div>
+        </div>
+        <div class="trip-driver-details" *ngIf="!isDriverDetails">
+          <div class="trip-driver-details-left">
+              <img *ngIf="ownerImage !== ''" [src]="ownerImage">
+              <img *ngIf="ownerImage == ''" src="assets/images/ic_driverduty.svg" />
+            <!-- <img src="assets/images/ic_driverduty.svg" /> -->
+          </div>
+          <div class="trip-driver-details-right">
+            <div class="trip-driver-details-right-content p-a-0">
+              <h6>Owner Name :</h6>
+              <h4>{{tripDetails.ownerName}}</h4>
+            </div>
+            <div class="trip-driver-details-right-content p-a-0">
+              <h6>Owner Mobile No :</h6>
+              <h4>{{tripDetails.ownerContactNumber}}</h4>
+            </div>
+            <div class="trip-driver-details-right-content p-a-0">
+              <h6>Address :</h6>
+              <h4>{{tripDetails.vehicleAddress}}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="trip-tracking-right">
+      <!-- <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map> -->
+      <iframe [src]="url" class="map-frame"></iframe>
+    </div>
+  </div>
+
+
+  <app-nodata class="w-100p" *ngIf="!isDataExists" [noDataText]='noDataText'></app-nodata>
+
+
+</div>

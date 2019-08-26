@@ -1,0 +1,50 @@
+<div class="modal-header">
+  <h5 class="modal-title">RawData Details of {{selectedrawdata.imeiNumber}}</h5>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.close('refreshContent')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body p-r-2">
+  <div class="row">
+    <div class="col-md-6">
+      <h5>ID No</h5>
+      <h4>{{selectedrawdata.rawDataId}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>IMEI No</h5>
+      <h4>{{selectedrawdata.imeiNumber}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Vehicle No</h5>
+      <h4>{{selectedrawdata.vehicleRegNo}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>CVP Type</h5>
+      <h4>{{selectedrawdata.cvpType}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Packet Type</h5>
+      <h4>{{selectedrawdata.packetType}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Alert ID</h5>
+      <h4>{{selectedrawdata.vehicleModeId}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Network Date</h5>
+      <h4>{{selectedrawdata.networkDate}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Network Time</h5>
+      <h4>{{selectedrawdata.networkTime}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Packet Status</h5>
+      <h4>{{selectedrawdata.packetStatus}}</h4>
+    </div>
+    <div class="col-md-12">
+      <h5>Raw Data</h5>
+      <h4>{{selectedrawdata.rawData}}</h4>
+    </div>
+  </div>
+</div>

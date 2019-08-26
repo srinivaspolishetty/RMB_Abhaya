@@ -1,0 +1,286 @@
+/**
+iconfont Webfont
+*/
+@font-face {
+	font-family: 'iconfont';
+	src: url('iconfont.eot?1564470391783');
+	src: url('iconfont.eot?#iefix-1564470391783') format('embedded-opentype'),
+		url('iconfont.woff2?1564470391783') format('woff2'),
+		url('iconfont.woff?1564470391783') format('woff'),
+		url('iconfont.ttf?1564470391783') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^='icon-']:before,
+[class*=' icon-']:before {
+	font-family: 'iconfont';
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1;
+	font-weight: normal;
+	font-style: normal;
+	speak: none;
+	text-decoration: inherit;
+	font-size: inherit;
+	text-transform: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/*
+Glyphs list
+*/
+
+.icon-ab-alertsquickview:before {
+	content: '\ea01';
+}
+
+.icon-ab-devicestatus:before {
+	content: '\ea02';
+}
+
+.icon-ab-helpdesk:before {
+	content: '\ea03';
+}
+
+.icon-ab-listview:before {
+	content: '\ea04';
+}
+
+.icon-ab-mapview:before {
+	content: '\ea05';
+}
+
+.icon-ab-panivalerts:before {
+	content: '\ea06';
+}
+
+.icon-ab-refresh:before {
+	content: '\ea07';
+}
+
+.icon-ab-search:before {
+	content: '\ea08';
+}
+
+.icon-ab-searchfilter:before {
+	content: '\ea09';
+}
+
+.icon-ab-triptracking:before {
+	content: '\ea0a';
+}
+
+.icon-ab-vehicleauth:before {
+	content: '\ea0b';
+}
+
+.icon-ab_download:before {
+	content: '\ea0c';
+}
+
+.icon-ab_more:before {
+	content: '\ea0d';
+}
+
+.icon-ab_refresh:before {
+	content: '\ea0e';
+}
+
+.icon-bell:before {
+	content: '\ea0f';
+}
+
+.icon-download:before {
+	content: '\ea10';
+}
+
+.icon-ic_activate:before {
+	content: '\ea11';
+}
+
+.icon-ic_activate_details:before {
+	content: '\ea12';
+}
+
+.icon-ic_Admin:before {
+	content: '\ea13';
+}
+
+.icon-ic_arrow_down:before {
+	content: '\ea14';
+}
+
+.icon-ic_arrow_up:before {
+	content: '\ea15';
+}
+
+.icon-ic_close:before {
+	content: '\ea16';
+}
+
+.icon-ic_command:before {
+	content: '\ea17';
+}
+
+.icon-ic_CommunicationDetails:before {
+	content: '\ea18';
+}
+
+.icon-ic_dashboard:before {
+	content: '\ea19';
+}
+
+.icon-ic_DeviceCommunicatoin:before {
+	content: '\ea1a';
+}
+
+.icon-ic_DeviceCommunicatoin_2:before {
+	content: '\ea1b';
+}
+
+.icon-ic_DeviceManagement:before {
+	content: '\ea1c';
+}
+
+.icon-ic_devicereport:before {
+	content: '\ea1d';
+}
+
+.icon-ic_driverduty:before {
+	content: '\ea1e';
+}
+
+.icon-ic_DriverManagement:before {
+	content: '\ea1f';
+}
+
+.icon-ic_edit:before {
+	content: '\ea20';
+}
+
+.icon-ic_EmergencyManagement:before {
+	content: '\ea21';
+}
+
+.icon-ic_health:before {
+	content: '\ea22';
+}
+
+.icon-ic_HealthManagement:before {
+	content: '\ea23';
+}
+
+.icon-ic_health_details:before {
+	content: '\ea24';
+}
+
+.icon-ic_LocationManagement:before {
+	content: '\ea25';
+}
+
+.icon-ic_mapview:before {
+	content: '\ea26';
+}
+
+.icon-ic_menu-back:before {
+	content: '\ea27';
+}
+
+.icon-ic_menu:before {
+	content: '\ea28';
+}
+
+.icon-ic_menu_bar:before {
+	content: '\ea29';
+}
+
+.icon-ic_modemdetails:before {
+	content: '\ea2a';
+}
+
+.icon-ic_more:before {
+	content: '\ea2b';
+}
+
+.icon-ic_Movement_Details:before {
+	content: '\ea2c';
+}
+
+.icon-ic_panicalert:before {
+	content: '\ea2d';
+}
+
+.icon-ic_profile:before {
+	content: '\ea2e';
+}
+
+.icon-ic_rawData:before {
+	content: '\ea2f';
+}
+
+.icon-ic_Reports:before {
+	content: '\ea30';
+}
+
+.icon-ic_rootdeviation:before {
+	content: '\ea31';
+}
+
+.icon-ic_search:before {
+	content: '\ea32';
+}
+
+.icon-ic_searchfilter:before {
+	content: '\ea33';
+}
+
+.icon-ic_SuspiciousVehicles:before {
+	content: '\ea34';
+}
+
+.icon-ic_system_m:before {
+	content: '\ea35';
+}
+
+.icon-ic_track:before {
+	content: '\ea36';
+}
+
+.icon-ic_tripdetails:before {
+	content: '\ea37';
+}
+
+.icon-ic_TripManagement:before {
+	content: '\ea38';
+}
+
+.icon-ic_user:before {
+	content: '\ea39';
+}
+
+.icon-ic_UserManagement:before {
+	content: '\ea3a';
+}
+
+.icon-ic_VehicleManagement:before {
+	content: '\ea3b';
+}
+
+.icon-ic_vehicle_mapping:before {
+	content: '\ea3c';
+}
+
+.icon-ic_video_streaming:before {
+	content: '\ea3d';
+}
+
+.icon-ic_view:before {
+	content: '\ea3e';
+}
+
+.icon-ic_warning:before {
+	content: '\ea3f';
+}

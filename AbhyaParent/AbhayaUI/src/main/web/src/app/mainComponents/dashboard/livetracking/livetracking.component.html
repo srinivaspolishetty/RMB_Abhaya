@@ -1,0 +1,21 @@
+<div class="row no-gutters bdr-bottom p-b-4 p-t-1" *ngIf="isDataExists">
+    <div class="col-md-4">
+      <div class="content-left clearfix">
+        <img src="assets/images/ab-triptracking.svg">
+      </div>
+      <div class="content-right">
+        <h6 class="p-t-2">Trips</h6>
+        <h5>{{liveTrackingData.totaltrips}}</h5>
+        </div>
+    </div>
+    <div class="col-md-3">
+      <h6 class="text-abhaya p-t-2">Open</h6>
+      <h5 [routerLink]="['/trip']" class="text-abhaya cursor-hand">{{liveTrackingData.opentrips}}</h5>
+    </div>
+    <div class="col-md-3">
+      <h6 class="text-yellow p-t-2">Route Deviation</h6>
+      <h5 [routerLink]="['/trip/routedeviation']" class="text-yellow cursor-hand">{{routeDeviationData[0].count}}</h5>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+  <app-nodata class="w-100p" *ngIf="!isDataExists" [noDataText]='noDataText'></app-nodata>

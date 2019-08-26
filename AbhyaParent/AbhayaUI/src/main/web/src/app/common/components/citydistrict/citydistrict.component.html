@@ -1,0 +1,52 @@
+<form name="form" #childForm="ngForm" novalidate>
+  <div class="row">
+    <div [className]="cityDistrictConfig.districtElemSize">
+      <div class="form-group">
+        <label for="email">DISTRICT</label>
+        <select class="form-control" [disabled]="cityDistrictConfig.disableDistrict"
+          [(ngModel)]="cityDistrictConfig.districtName" (change)="getCities(cityDistrictConfig.districtName)"
+          [required]="cityDistrictConfig.isDistrictRequired ? 'required' : null" name="districtName"
+          #districtNamectrl="ngModel" [ngClass]="{ 'is-invalid': childForm.submitted && districtNamectrl.invalid }">
+          <option value="">-- Select District --</option>
+          <option *ngFor="let district of districtArray" [ngValue]="district.id">{{district.name}}
+          </option>
+        </select>
+        <div *ngIf="childForm.submitted && districtNamectrl.invalid" class="invalid-feedback">
+          <span *ngIf="districtNamectrl.errors.required">District is Required</span>
+        </div>
+      </div>
+    </div>
+    <div [className]="cityDistrictConfig.cityElemSize">
+      <div class="form-group">
+        <label for="email">CITY</label>
+        <select class="form-control" [disabled]="cityDistrictConfig.disableCity"
+          [(ngModel)]="cityDistrictConfig.cityName" (change)="getRtoOffice(cityDistrictConfig.cityName)"
+          [required]="cityDistrictConfig.isCityRequired ? 'required' : null" name="cityName" #cityNamectrl="ngModel"
+          [ngClass]="{ 'is-invalid': childForm.submitted && cityNamectrl.invalid }">
+          <option value="">-- Select City --</option>
+          <option *ngFor="let city of cityarray" [ngValue]="city.id">{{city.name}}
+          </option>
+        </select>
+        <div *ngIf="childForm.submitted && cityNamectrl.invalid" class="invalid-feedback">
+          <span *ngIf="cityNamectrl.errors.required">City is Required</span>
+        </div>
+      </div>
+    </div>
+    <div [className]="cityDistrictConfig.rtoOfficeElemSize">
+      <div class="form-group">
+        <label for="email">RTO OFFICE</label>
+        <select class="form-control" [disabled]="cityDistrictConfig.disablertoOffice"
+          [(ngModel)]="cityDistrictConfig.rtoOfficeName"
+          [required]="cityDistrictConfig.isrtoOfficeRequired ? 'required' : null" name="rtoOfficeName" #rtoOfficeNamectrl="ngModel"
+          [ngClass]="{ 'is-invalid': childForm.submitted && rtoOfficeNamectrl.invalid }">
+          <option value="">-- Select RTO Office --</option>
+          <option *ngFor="let rto of rtoOfficeArray" [ngValue]="rto.id">{{rto.name}}
+          </option>
+        </select>
+        <div *ngIf="childForm.submitted && rtoOfficeNamectrl.invalid" class="invalid-feedback">
+          <span *ngIf="rtoOfficeNamectrl.errors.required">RTO Office is Required</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

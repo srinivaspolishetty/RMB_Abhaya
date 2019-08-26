@@ -1,0 +1,81 @@
+.#{$global} {
+  &-table {
+    width: 100%;
+    & thead {
+      & tr {
+        & th {
+          padding: 9px 0px;
+          background-color: $blue-lighter;
+          color: $abhaya-primary-color;
+          text-align: center;
+          font-size: 14px;
+          min-width: 100px;
+          &:last-child {
+            width: 40px;
+          }
+        }
+      }
+    }
+    & tbody {
+      & tr {
+        border-bottom: 1px solid $line-color;
+        & td {
+          padding: 9px 0px;
+          color: $primary-color;
+          text-align: center;
+          font-size: 14px;
+          a {
+            .dropdown {
+              &-item {
+                display: block;
+                width: 100%;
+                padding: 0.6rem 1.5rem !important;
+                clear: both;
+                font-size: 13px;
+                font-weight: 500 !important;
+                color: $primary-color !important;
+                text-align: inherit;
+                white-space: nowrap;
+                background-color: transparent;
+                border: 0;
+                border-bottom: 1px solid $light-grey !important;
+
+                &:last-child {
+                  border: 0;
+                  border-bottom: 0px solid $light-grey !important;
+                }
+                &:hover {
+                  color: $abhaya-primary-color !important;
+                  background-color: transparent;
+                }
+              }
+            }
+          }
+          &:last-child {
+            color: $abhaya-primary-color;
+          }
+        }
+        &:hover {
+          background-color: $red-ultralight;
+        }
+      }
+    }
+    &-search {
+      float: left;
+      width: 50%;
+      margin-bottom: 0px !important;
+      position: absolute;
+      top: 5px;
+      & i {
+        padding-bottom: 8px;
+        padding-left: 8px;
+        position: absolute;
+        top: 9px;
+        color: $grey-light;
+      }
+      & input {
+        padding-left: 30px;
+      }
+    }
+  }
+}

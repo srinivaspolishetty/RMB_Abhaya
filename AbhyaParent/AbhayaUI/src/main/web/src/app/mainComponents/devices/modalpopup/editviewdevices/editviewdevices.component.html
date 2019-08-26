@@ -1,0 +1,115 @@
+<div class="modal-header">
+  <h5 class="modal-title">{{pageTitle}}</h5>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.close('refreshContent')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body p-r-2">
+  <div class="row" *ngIf="viewDetails">
+    <div class="col-md-6">
+      <h5>ID</h5>
+      <h4>{{selectedDeviceDetails.id}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>IMEI Number</h5>
+      <h4>{{selectedDeviceDetails.imeiNumber}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>IMSI Number</h5>
+      <h4>{{selectedDeviceDetails.imsiNumber}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Serial Number</h5>
+      <h4>{{selectedDeviceDetails.serialNumber}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Sim number</h5>
+      <h4>{{selectedDeviceDetails.simNumber}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Vehicle No</h5>
+      <h4>{{selectedDeviceDetails.vehicleRegNo}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>IP Address</h5>
+      <h4>{{selectedDeviceDetails.ipAddress}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Signal Strength</h5>
+      <h4>{{selectedDeviceDetails.signalStrength}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Network Date</h5>
+      <h4>{{selectedDeviceDetails.networkDate}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Ntework Time</h5>
+      <h4>{{selectedDeviceDetails.networkTime}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Created Date</h5>
+      <h4>{{selectedDeviceDetails.createdDate}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Updated Date</h5>
+      <h4>{{selectedDeviceDetails.updatedDate}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Version</h5>
+      <h4>{{selectedDeviceDetails.version}}</h4>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-md-12">
+        <form name="form" (ngSubmit)="f.form.valid && editDeviceDetails()" #f="ngForm" novalidate>
+          <table class="abhaya-table popup m-t-4 text-left">
+            <thead>
+              <tr>
+                <th class="w-25p">IMSI No</th>
+                <th class="w-25p">Provider</th>
+                <th class="w-25p">Mobile No</th>
+                <th class="w-25p">Status</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="simDetails.length > 0">
+              <tr *ngFor="let details of simDetails; let idx = index">
+                <td class="w-25p">{{details.imsiNumber}}</td>
+                <td class="w-25p">{{details.telecomProvider}}</td>
+                <td class="w-25p" *ngIf="!viewDetails">
+                  <input type="text" class="form-control" [(ngModel)]="mobileNumber[idx]" #mobileNumberctrl="ngModel"
+                    name="mobileNumber{{idx}}" [ngClass]="{ 'is-invalid': f.submitted && mobileNumberctrl.invalid }"
+                    minlength="{{ Validations.MOBILE_MIN_LENGTH }}" maxlength="{{ Validations.MOBILE_MAX_LENGTH }}"
+                    pattern="{{ Validations.MOBILE_PATTERN }}" />
+                  <div *ngIf="f.submitted && mobileNumberctrl.invalid" class="invalid-feedback">
+                    <div *ngIf="mobileNumberctrl.errors?.minlength">Mobile number must be 10 characters</div>
+                    <div *ngIf="mobileNumberctrl.errors?.maxlength">Mobile number must be 10 characters</div>
+                    <div *ngIf="mobileNumberctrl.errors?.pattern">Mobile number must be numeric</div>
+                  </div>
+  
+                </td>
+                <td class="w-25p" *ngIf="viewDetails">{{details.mobileNumber}}</td>
+                <td class="w-25p">{{details.status}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="row" >
+            <div class="w-100" *ngIf="simDetails.length === 0">
+              <div >
+                <h6 class="text-center text-red-medium">No Sim Details Found</h6>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="!mobileNumberField" class="text-red-medium"> Atleast One Mobile Number required! </div>
+          <span *ngIf="simDetails.length > 0">
+            <button *ngIf="!viewDetails" type="submit" class="btn btn-primary m-t-1">Update</button>
+          </span>
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+
+</div>

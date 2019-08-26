@@ -1,0 +1,54 @@
+<div class="login-main">
+  <div class="row no-gutters login-height">
+    <div class="col-md-7">
+      <div class="login-banner">
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="row no-gutters">
+        <div class="login-logo">
+          <img style="float:right;" src="assets/images/rajanna-mahila-bhadratha.svg">
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="login-block">
+          <div class="form">
+            <div class="loginerror">{{loginError}}</div>
+            <form #loginfForm="ngForm" name="form" novalidate (ngSubmit)="loginfForm.valid && userLogin(login)">
+              <div class="text-input form-group" [class.has-error]="loginfForm.submitted && usernamectrl.invalid">
+                <label class="required">USER ID</label>
+                <input type="text" autocomplete="off" class="form-control" [(ngModel)]="login.username" name="username" required #usernamectrl="ngModel" />
+                <span class="separator"> </span>
+                <span class="help-block" *ngIf="loginfForm.submitted && usernamectrl.errors?.required">
+                  Username is required</span>
+              </div>
+              <div class="text-input form-group" [class.has-error]="loginfForm.submitted && passwordctrl.invalid">
+                <label class="required">PASSWORD</label>
+                <input type="password" autocomplete="off" class="form-control" [(ngModel)]="login.password" name="password" required #passwordctrl="ngModel" />
+                <span class="separator"> </span>
+                <span class="help-block" *ngIf="loginfForm.submitted && passwordctrl.errors?.required">
+                  Username is required</span>
+              </div>
+              <div class="form-group p-t-3">
+                <button type="submit" class="btn-submit ripple">LOGIN</button>
+                <!-- <a [routerLink]="['/dashboard']" class="btn-submit ripple">LOGIN</a> -->
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer-login fixed-bottom">
+      <div class="row no-gutters">
+        <div class="col-md-6 text-left footer-login-left p-l-5">
+            <img src="assets/images/ap-logo.svg">
+        </div>
+        <div class="col-md-6 text-right footer-login-right p-r-5">
+            <span>Developed By</span>
+            <img src="assets/images/otsi-logo.svg">
+        </div>
+      </div>
+     
+    </footer>
+  </div>
+</div>

@@ -1,0 +1,300 @@
+<div class="modal-header">
+  <h5 class="modal-title">Location Details of {{selectedLocationDetails.imei}}</h5>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.close('refreshContent')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body p-r-2">
+  <div class="row">
+    <div class="col-md-6">
+      <h5>ID</h5>
+      <h4>{{selectedLocationDetails.id}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>IMEI No</h5>
+      <h4>{{selectedLocationDetails.imei}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Vendor ID</h5>
+      <h4>{{selectedLocationDetails.vendorId}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>RFID</h5>
+      <h4>{{selectedLocationDetails.rfid}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Altitude</h5>
+      <h4>{{selectedLocationDetails.altitude}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Digital Input Status</h5>
+      <h4>{{selectedLocationDetails.digitalInputStatus}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Digital Output Status</h5>
+      <h4>{{selectedLocationDetails.digitalOutputStatus}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Firmware Version</h5>
+      <h4>{{selectedLocationDetails.firmwareVersion}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Frame Number</h5>
+      <h4>{{selectedLocationDetails.frameNumber}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Latitude</h5>
+      <h4>{{selectedLocationDetails.latitude}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Latitude Direction</h5>
+      <h4>{{selectedLocationDetails.latitudeDirection}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Longitude</h5>
+      <h4>{{selectedLocationDetails.longitude}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Longitude Direction</h5>
+      <h4>{{selectedLocationDetails.longitudeDirection}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>GPS Fix</h5>
+      <h4>{{selectedLocationDetails.gpsFix}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>GSM Signal Strength</h5>
+      <h4>{{selectedLocationDetails.gsmSignalStrength}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>HDoP</h5>
+      <h4>{{selectedLocationDetails.hdop}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Heading</h5>
+      <h4>{{selectedLocationDetails.heading}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Emergency Status</h5>
+      <h4>{{selectedLocationDetails.emergencyStatus}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Ignition</h5>
+      <h4>{{selectedLocationDetails.ignition}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Internal Battery Voltage %</h5>
+      <h4>{{selectedLocationDetails.internalBatteryVoltage}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>No Of Satellites</h5>
+      <h4>{{selectedLocationDetails.noOfSatellites}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Main Input Voltage</h5>
+      <h4>{{selectedLocationDetails.mainInputVoltage}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Main Power Status</h5>
+      <h4>{{selectedLocationDetails.mainPowerStatus}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Network Operator Name</h5>
+      <h4>{{selectedLocationDetails.networkOperatorName}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>LAC</h5>
+      <h4>{{selectedLocationDetails.lac}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>MCC</h5>
+      <h4>{{selectedLocationDetails.mcc}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Packet Type</h5>
+      <h4>{{selectedLocationDetails.packetType}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Packet Status</h5>
+      <h4>{{selectedLocationDetails.packetStatus}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Network Date</h5>
+      <h4>{{selectedLocationDetails.networkDate}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Network Time</h5>
+      <h4>{{selectedLocationDetails.networkTime}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>PDOP</h5>
+      <h4>{{selectedLocationDetails.pdop}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Speed</h5>
+      <h4>{{selectedLocationDetails.speed}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Date</h5>
+      <h4>{{selectedLocationDetails.date}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Time</h5>
+      <h4>{{selectedLocationDetails.time}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Tamper Alert</h5>
+      <h4>{{selectedLocationDetails.tamperAlert}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Created Date</h5>
+      <h4>{{selectedLocationDetails.createdDate}}</h4>
+    </div>
+
+    <div class="col-md-6">
+      <h5>Vehicle Number</h5>
+      <h4>{{selectedLocationDetails.vehicleRegNo}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Main Power Status</h5>
+      <h4>{{selectedLocationDetails.mainPowerStatus}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Internal Battery Voltage</h5>
+      <h4>{{selectedLocationDetails.internalBatteryVoltage}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Cell Id</h5>
+      <h4>{{selectedLocationDetails.cellId}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Vehicle Mode</h5>
+      <h4>{{selectedLocationDetails.vehicleMode}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Vehicle Mode Id</h5>
+      <h4>{{selectedLocationDetails.vehicleModeId}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Engine Status</h5>
+      <h4>{{selectedLocationDetails.engineStatus}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Over Network Ip</h5>
+      <h4>{{selectedLocationDetails.overNetworkIp}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Over Sms Number</h5>
+      <h4>{{selectedLocationDetails.overSmsNumber}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Analog Zero</h5>
+      <h4>{{selectedLocationDetails.analogZero}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Analog One</h5>
+      <h4>{{selectedLocationDetails.analogOne}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Over The Air Parameter</h5>
+      <h4>{{selectedLocationDetails.overTheAirParameter}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Valve Status</h5>
+      <h4>{{selectedLocationDetails.valveStatus}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Complete AlertS tatus</h5>
+      <h4>{{selectedLocationDetails.completeAlertStatus}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Reserved</h5>
+      <h4>{{selectedLocationDetails.reserved}}</h4>
+    </div>
+    <div class="col-md-12">
+      <h5>NMR</h5>
+      <h4>{{selectedLocationDetails.nmr}}</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="modal-subheading">Location Alert Details</div>
+    </div>
+    <div class="col-md-6">
+      <h5>Alert Id</h5>
+      <h4>{{selectedLocationDetails.alertsStatusVO[0].alertId}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Ignition Off</h5>
+      <h4>{{selectedLocationDetails.alertsStatusVO[0].ignitionOff}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Emergency Wire Disconnected</h5>
+      <h4>{{selectedLocationDetails.alertsStatusVO[0].emergencyWireDisc}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>IOT Device Disconnect</h5>
+      <h4>{{selectedLocationDetails.alertsStatusVO[0].iotDeviceDisconnect}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Panic Press</h5>
+      <h4>{{selectedLocationDetails.alertsStatusVO[0].panicPress}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>RFID Swiped</h5>
+      <h4>{{selectedLocationDetails.alertsStatusVO[0].rfidSwiped}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Harsh Acceleration</h5>
+      <h4>{{selectedLocationDetails.alertsStatusVO[0].harshAcceleration}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Panic Disable</h5>
+      <h4>{{selectedLocationDetails.alertsStatusVO[0].panicDisable}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Vehicle Battery Disconnect</h5>
+      <h4>{{selectedLocationDetails.alertsStatusVO[0].vehicleBatteryDiscon}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>IOT Device Tamper</h5>
+      <h4>{{selectedLocationDetails.alertsStatusVO[0].iotDeviceTamper}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Panic Engine Off</h5>
+      <h4>{{selectedLocationDetails.alertsStatusVO[0].panicEngineOff}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Over Speed</h5>
+      <h4>{{selectedLocationDetails.alertsStatusVO[0].overSpeed}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Sleep Mode</h5>
+      <h4>{{selectedLocationDetails.alertsStatusVO[0].sleepMode}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Vehicle Sudden Turn</h5>
+      <h4>{{selectedLocationDetails.alertsStatusVO[0].vehicleSuddenTurn}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Auto Battery Low</h5>
+      <h4>{{selectedLocationDetails.alertsStatusVO[0].autoBatteryLow}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>External Battery Low</h5>
+      <h4>{{selectedLocationDetails.alertsStatusVO[0].externalBatteryLow}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Buzzer</h5>
+      <h4>{{selectedLocationDetails.alertsStatusVO[0].buzzer}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Valve</h5>
+      <h4>{{selectedLocationDetails.alertsStatusVO[0].valve}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Harsh Breaking</h5>
+      <h4>{{selectedLocationDetails.alertsStatusVO[0].harshBreaking}}</h4>
+    </div>
+  </div>
+</div>

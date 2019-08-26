@@ -1,0 +1,201 @@
+TRACK_ME = {
+    refreshInterval: (1 * 1 * 1000),
+    interval: null,
+    autoRefresh: true,
+    directionsService: null,
+    tripId: null,
+    isTripClosed: true,
+    isFirstTime: true,
+    trackingArray: [],
+    liveStatusInterval: null,
+    liveStatusRefreshInterval: (1 * 1 * 1000),
+    map: null,
+    mapOptions: {
+        center: null,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeControlOptions: {},
+        zoom: 13,
+        mapTypeControl: false,
+        navigationControl: true,
+        panControl: true,
+        scaleControl: true,
+        overviewMapControl: true,
+        draggable: true,
+        streetViewControl: false,
+        disableDefaultUI: true,
+        clickableIcons: false
+    },
+    appURL: "https://abhayaotsi.epragathi.org:8099/mobile/",
+    appWebURL: "https://abhayaotsi.epragathi.org:8099/v1/",
+    initMap: function () {
+        var me = this;
+        me.directionsService = new google.maps.DirectionsService;
+        me.map = new google.maps.Map(document.getElementById('map'), me.mapOptions);
+        me.mapOptions = {
+            zoom: 4,
+            center: {
+                lat: 0,
+                lng: -180
+            },
+            mapTypeId: 'terrain'
+        }
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var url_1 = url_string.split('?')[1];
+        var vehicleString = url_1.split('&')[0];
+        var mobileString = url_1.split('&')[1];
+        me.vehicleNumber = vehicleString.split('=')[1];;
+        me.citizenMobileNumber = mobileString.split('=')[1];;
+
+
+        $.ajax(
+            {
+                type: "GET",
+                url: me.appURL + "isTripExist/?vehicleNumber=" + me.vehicleNumber + '&citizenMobileNumber=' + me.citizenMobileNumber,
+                success: function (data) {
+                    if (data.isTripExist) {
+                        me.tripId = data.tripId;
+                        alert(me.tripId);
+                        $.ajax({
+                            type: "GET",
+                            url: me.appWebURL + "trip/tripDetails?tripId=" + me.tripId,
+                            // url	  : me.appURL + "tripTraceDetails?tripId=" + me.tripId + "&traceId=" + me.mapConfig.latestGeoLocationId ,
+                            success: function (_data) {
+                                var data = _data.content[0]
+                                console.log(data);
+                                document.getElementById('source').value = data.sourceLocation;
+                                document.getElementById('end1').value = data.destiLocation;
+                                me.isTripClosed = data.tripClosed;
+                                var sourceMarker = me.makeMarker({
+                                    lat: parseFloat(data.sourceLatLang.split(',')[0]),
+                                    lng: parseFloat(data.sourceLatLang.split(',')[1])
+                                }, 'images/s.png');
+                                var destMarker = me.makeMarker({
+                                    lat: parseFloat(data.destiLatLang.split(',')[0]),
+                                    lng: parseFloat(data.destiLatLang.split(',')[1])
+                                }, 'images/d.png');
+                                var request = {
+                                    origin: data.sourceLatLang,
+                                    destination: data.destiLatLang,
+                                    unitSystem: google.maps.UnitSystem.METRIC,
+                                    travelMode: google.maps.TravelMode['DRIVING']
+                                };
+                                var service_callback = function (response, status) {
+                                    var renderer = new google.maps.DirectionsRenderer({
+                                        polylineOptions: {
+                                            strokeColor: "#0000ff"
+                                        }
+                                    });
+                                    renderer.setMap(me.map);
+                                    renderer.setOptions({
+                                        suppressMarkers: true,
+                                        preserveViewport: true
+                                    });
+                                    renderer.setDirections(response);
+                                };
+                                me.directionsService.route(request, service_callback);
+                                if (me.isTripClosed) {
+                                    me.showTrack();
+                                }
+                                else {
+                                    me.attachLiveStatusEvent();
+                                }
+                            },
+                            error: function (_data) {
+                                console.log(_data);
+                            }
+                        });
+                    }
+                    else {
+                        alert('No Trips Available');
+                    }
+                    console.log(data);
+                },
+                error: function (data) {
+                }
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    },
+    showTrack: function () {
+        var me = this;
+        $.ajax({
+            type: "GET",
+            url: me.appWebURL + "trip/tripTracks?tripId=" + me.tripId,
+            success: function (_data) {
+                var tripData = _data.content;
+                console.log('Updating Trip');
+                if (!me.isTripClosed) {
+                    var livePosition = me.makeMarker({
+                        lat: parseFloat(tripData[0].latitude),
+                        lng: parseFloat(tripData[0].longitude)
+                    }, 'images/ic_auto.png');
+                }
+                var lngs = tripData.map(function (tripData) {
+                    return tripData.longitude;
+                });
+                var lats = tripData.map(function (tripData) {
+                    return tripData.latitude;
+                });
+                if (me.isFirstTime) {
+                    me.map.fitBounds({
+                        west: Math.min.apply(null, lngs),
+                        east: Math.max.apply(null, lngs),
+                        north: Math.min.apply(null, lats),
+                        south: Math.max.apply(null, lats),
+                    });
+                    me.isFirstTime = false;
+                }
+                for (let i of tripData) {
+                    triplatlng = {
+                        lat: parseFloat(i.latitude),
+                        lng: parseFloat(i.longitude)
+                    }
+                    me.trackingArray.push(triplatlng);
+                }
+                var travelPath = new google.maps.Polyline({
+                    path: me.trackingArray,
+                    geodesic: true,
+                    strokeColor: '#555555',
+                    strokeOpacity: 1.0,
+                    strokeWeight: 2
+                });
+                travelPath.setMap(me.map);
+            },
+            error: function (_data) {
+                console.log(_data);
+            }
+        });
+    },
+    makeMarker: function (position, icon) {
+        var me = this;
+        var marker = new google.maps.Marker({
+            position: position,
+            icon: icon
+        });
+        marker.setMap(me.map);
+        return marker;
+    }
+    , detachLiveStatusEvent() {
+        var me = this;
+        clearInterval(me.liveStatusInterval)
+    }
+    , attachLiveStatusEvent: function () {
+        var me = this;
+        me.liveStatusInterval = setInterval(function () {
+            me.showTrack();
+        }, me.liveStatusRefreshInterval);
+    }
+}

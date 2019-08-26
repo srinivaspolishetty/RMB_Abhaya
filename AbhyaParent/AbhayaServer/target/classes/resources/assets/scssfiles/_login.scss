@@ -1,0 +1,188 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background: $white;
+}
+
+$curve: linear;
+
+.form {
+  width: 300px;
+  margin: 0 auto;
+  text-align: left;
+  margin-top: 13em;
+
+  label {
+    display: block;
+    text-align: left;
+    color: $primary-color;
+    font-size: 0.875em;
+  }
+
+  form {
+    .text-input {
+      padding: 0.5em 0em;
+      overflow: hidden;
+      margin-bottom: 0.875em;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.5em 0 4px;
+      padding-left: 0;
+      background: none;
+      color: $primary-color;
+      font-weight: bold;
+      border: none;
+      border-bottom: 1px solid #d1d1d1;
+      &:focus + .separator {
+        transform: scaleX(1) translateY(-2px);
+        opacity: 1;
+      }
+    }
+
+    .btn {
+      &-submit {
+        color: white;
+        background: $abhaya-primary-color;
+        padding: 0.9em 9.2em;
+        font-size: 1.2em;
+        font-size:14px;
+        border: none;
+        border-radius: 3px;
+        &.ripple {
+          background-position: center;
+          transition: background 0.8s;
+        }
+        &.ripple:hover {
+          background: $abhaya-secondary-color radial-gradient(circle, transparent 1%, $abhaya-secondary-color 1%) center/15000%;
+        }
+        &.ripple:active {
+          background-color: $white;
+          background-size: 100%;
+          transition: background 0s;
+        }
+      }
+    }
+  }
+}
+
+.separator {
+  height: 2px;
+  width: 100%;
+  background: $abhaya-primary-color;
+  display: block;
+  transform: scaleX(0) translateY(-2px);
+  transform-origin: 50%;
+  opacity: 0;
+  transition: all 0.3s $curve;
+}
+
+* :focus {
+  outline-color: transparent;
+  outline-style: none;
+}
+
+.form-bottom {
+  margin-top: 1.25em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.login {
+  &-main {
+    margin: auto;
+    background-color: white !important;
+  }
+  &-banner {
+    background-size: contain;
+    height: 600px;
+    background-image: url(assets/images/bg_login.svg);
+    background-repeat: no-repeat;
+  }
+  &-logo {
+    float: right;
+    position: absolute;
+    right: 13%;
+    top: 4%;
+  }
+  &-leftline {
+    height: 20px;
+    width: 3px;
+    background-color: #18bfff;
+  }
+  &-content {
+    h3 {
+      padding-left: 10px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #18bfff;
+    }
+  }
+  &-form {
+    margin-top: 30px;
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding-bottom: 12px;
+    border: 0px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #f8f8f8;
+    outline: none;
+    & option {
+      font-weight: normal;
+      display: block;
+      white-space: pre;
+      min-height: 3.2em;
+      padding-top: 0px;
+      padding-right: 0px;
+      padding-bottom: 1px;
+      padding-left: 2px;
+      box-sizing: border-box;
+    }
+  }
+  &-block {
+    top: 62%;
+    left: 7%;
+    position: relative;
+  }
+  &-height {
+    min-height: 600px;
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .login {
+    &-main {
+      margin: auto;
+      background-color: white !important;
+      overflow: hidden !important;
+    }
+    &-banner {
+      background-size: contain;
+      widows: 750px;
+      height: 500px;
+      // background-image:url(assets/images/bg_login.png);
+      background-repeat: no-repeat;
+    }
+    &-height {
+      min-height: 650px;
+    }
+  }
+}
+.focal {
+  &-point {
+    & input:focus {
+      & + i {
+        color: $abhaya-primary-color;
+      }
+      & + div span i {
+        color: $abhaya-primary-color;
+      }
+    }
+  }
+}
+

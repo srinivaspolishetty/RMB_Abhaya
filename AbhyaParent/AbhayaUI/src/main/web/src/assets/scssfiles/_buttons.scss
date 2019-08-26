@@ -1,0 +1,391 @@
+.btn{
+    cursor: pointer;
+    background-color: transparent;
+    border:0px solid $abhaya-primary-color;
+    outline:none !important;
+    &-mapviewleft{
+        display: inline-block;
+        color: $abhaya-primary-color;
+        padding: 4px 10px;
+        border: 1px solid $abhaya-primary-color;
+        background-color: $white;
+        cursor: pointer !important;
+        border-radius: 5px;
+        border-right-style: none;
+        border-bottom-right-radius: 0px;
+        border-top-right-radius: 0px;
+        & i {
+           font-size:20px;
+          }
+          &:hover,
+          &.active {
+            color: $white !important;
+            background-color: $abhaya-primary-color;
+            outline: none !important;
+          }
+    }
+    &-mapviewright{
+        display: inline-block;
+        color: $abhaya-primary-color;
+        padding: 4px 10px;
+        border: 1px solid $abhaya-primary-color;
+        background-color: $white;
+        cursor: pointer !important;
+        border-radius: 5px;
+        border-left-style: none;
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 0px;
+        & i {
+           font-size:20px;
+          }
+          &:hover,
+          &.active {
+            color: $white !important;
+            background-color: $abhaya-primary-color;
+            outline: none !important;
+          }
+    }
+   
+        &-search{
+            background-color: transparent;
+            border:0px;
+            outline: none !important;
+            padding-top: 4px;
+            i{ 
+                font-size:18px;
+                color:$grey-light;
+                padding-top:8px;
+                
+            }
+        }
+     &-submit{
+         background-color:$abhaya-primary-color;
+         border:0px;
+         outline:none !important;
+         padding:12px 25px;
+         font-size:14px;
+         color:$white;
+         border-radius: 4px; 
+     }
+     &-back{
+        color: $abhaya-primary-color;
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        background-color: transparent;
+        outline: none !important;
+        cursor: pointer;
+        border: 0px;
+     }  
+     &-cancel{
+        background-color:transparent;
+        border:0px;
+        outline:none !important;
+        padding:10px 15px;
+        font-size:14px;
+        color:$white;
+        border-radius: 4px; 
+     } 
+     &-primary {
+        display: inline-block;
+        color: $abhaya-primary-color;
+        padding: 7px 10px;
+        border: 1px solid $abhaya-primary-color;
+        background-color: $white;
+        cursor: pointer !important;
+        border-radius: 5px;
+        border:1px solid $abhaya-primary-color !important;
+        &:hover,
+        &.active {
+        color: $white !important;
+        background-color: $abhaya-primary-color;
+        outline: none !important;
+        }
+      }
+      &-circle{
+          background-color: transparent;
+          display: inline-block;
+          padding-top:0px;
+          border-radius: 0px;
+          border:0px;
+          border-right:1px solid $line-color;
+          color:$primary-color;
+          cursor: pointer;
+          span{
+              color:$secondary-color;
+              font-size:25px;
+          }
+          i{
+              padding:9px;
+              font-size: 22px;
+          }
+          &:hover{
+            color: $abhaya-primary-color;
+          }
+          &:last-child{
+            border-right:0px solid $secondary-color;
+          }
+      }
+}
+
+.switch {
+	margin-top: -3px;
+	position: relative;
+	display: inline-block;
+	width: 60px;
+    height: 30px;
+    &-text{
+        font-size: 12px;
+        position: relative;
+        /* display: block; */
+        color: #0055a4;
+        /* margin-top: -25px; */
+        top: -11px;
+        right: 5px;
+    }
+    &-red{
+        font-size: 12px;
+        position: relative;
+        /* display: block; */
+        color: #f71a1a;
+        font-weight: bold;
+        /* margin-top: -25px; */
+        top: -11px;
+        right: 5px;
+    }
+}
+
+.switch input {
+	display: none;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: $abhaya-red;
+	-webkit-transition: .4s;
+    transition: .4s;
+    border: 1px solid $line-color;
+    color:$white !important;
+    font-size:12px !important;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 22px;
+	width: 22px;
+	left: 4px;
+    bottom: 3px;
+    background-color: $white;
+	border:1px solid $line-color;
+	-webkit-transition: .4s;
+    transition: .4s;
+    
+}
+
+input:checked+.slider {
+	background-color: $abhaya-green;
+}
+
+input:focus+.slider {
+	box-shadow: 0 0 1px $abhaya-primary-color;
+}
+
+input:checked+.slider:before {
+	-webkit-transform: translateX(28px);
+	-ms-transform: translateX(28px);
+	transform: translateX(28px);
+}
+
+/*------ ADDED CSS ---------*/
+
+
+.slider:after
+{
+ content:'OFF';
+ color: #fff;
+ display: block;
+ position: absolute;
+ transform: translate(-8%,-50%);
+ top: 50%;
+ left: 50%;
+ font-size: 12px !important;
+ font-family: Verdana, sans-serif;
+}
+
+input:checked + .slider:after
+{  
+  content:'ON';
+  padding-left:10px;
+  color:$white;
+  position: absolute;
+    transform: translate(-128%,-50%);
+    top: 50%;
+    left: 50%;
+    font-size: 12px;
+}
+
+
+.on {
+	display: none;
+}
+
+.off {
+	color:$line-color;
+    position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 30%;
+	font-size: 10px;
+	font-family: Verdana, sans-serif;
+}
+
+.on {
+	color:$abhaya-primary-color;
+    position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 30%;
+	font-size: 10px;
+	font-family: Verdana, sans-serif;
+}
+
+input:checked+.slider .on {
+    display: block;
+  
+}
+
+input:checked+.slider .off {
+    display: none;
+    
+}
+
+/*--------- END --------*/
+
+/* Rounded sliders */
+
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+
+
+
+// new switch toggle
+
+.slider2.round {
+	border-radius: 34px;
+}
+
+.slider2.round:before {
+	border-radius: 50%;
+}
+.switch2 {
+	margin-top: -3px;
+	position: relative;
+	display: inline-block;
+	width: 50px;
+    height: 30px;
+    &-text{
+        font-size: 12px;
+        position: relative;
+        /* display: block; */
+        color: #0055a4;
+        /* margin-top: -25px; */
+        top: -11px;
+        right: 5px;
+    }
+    &-red{
+        font-size: 12px;
+        position: relative;
+        /* display: block; */
+        color: #f71a1a;
+        font-weight: bold;
+        /* margin-top: -25px; */
+        top: -11px;
+        right: 5px;
+    }
+}
+
+.switch2 input {
+	display: none;
+}
+
+.slider2 {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: $line-color;
+	-webkit-transition: .4s;
+    transition: .4s;
+    border: 1px solid $line-color;
+    color:$white !important;
+    font-size:12px !important;
+}
+
+.slider2:before {
+	position: absolute;
+	content: "";
+	height: 22px;
+	width: 22px;
+	left: 4px;
+    bottom: 3px;
+    background-color: $white;
+	border:1px solid $line-color;
+	-webkit-transition: .4s;
+    transition: .4s;
+    
+}
+
+input:checked+.slider2 {
+	background-color: $abhaya-primary-color;
+}
+
+input:focus+.slider2 {
+	box-shadow: 0 0 1px $abhaya-primary-color;
+}
+
+input:checked+.slider2:before {
+	-webkit-transform: translateX(18px);
+	-ms-transform: translateX(18px);
+	transform: translateX(18px);
+}
+
+/*------ ADDED CSS ---------*/
+
+
+.slider:after
+{
+ content:'OFF';
+ color: #fff;
+ display: block;
+ position: absolute;
+ transform: translate(-8%,-50%);
+ top: 50%;
+ left: 50%;
+ font-size: 12px !important;
+ font-family: Verdana, sans-serif;
+}
+
+input:checked + .slider:after
+{  
+  content:'ON';
+  padding-left:10px;
+  color:$white;
+  position: absolute;
+    transform: translate(-128%,-50%);
+    top: 50%;
+    left: 50%;
+    font-size: 12px;
+}

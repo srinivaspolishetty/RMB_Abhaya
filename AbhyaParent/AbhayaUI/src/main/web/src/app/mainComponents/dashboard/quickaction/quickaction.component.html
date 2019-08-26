@@ -1,0 +1,21 @@
+<div class="bg-empty">
+    <div class="bg-empty-left">
+      <img src="assets/images/ab-alertsquickview.svg">
+    </div>
+    <div class="bg-empty-right">
+      <h6>Panic Alerts</h6>
+      <h5>Quick Action</h5>
+    </div>
+  </div>
+  <div class="bg-scroll">
+  <div class="bg-red m-t-1" *ngFor="let panic of panicData">
+    <div class="bg-red-left" (click)="tripMapView(panic)">
+      <h6>Vehicle</h6>
+      <h5>{{panic.rcNumber}}</h5>
+      <p><img src="assets/images/ab_time.svg" />{{panic.packetTime}}</p>
+    </div>
+    <div class="bg-red-right" (click)="tripMapView(panic)">
+      <img src="assets/images/map.png">
+    </div>
+  </div>
+</div>

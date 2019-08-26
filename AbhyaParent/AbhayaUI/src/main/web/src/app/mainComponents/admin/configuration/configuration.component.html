@@ -1,0 +1,80 @@
+<div class="container top-header  p-b-3">
+  <div class="row head-block no-gutters bdr-bottom m-b-3 p-t-1">
+    <div class="col-md-5 p-l-0">
+      <h4>Configuration</h4>
+    </div>
+    <div class="col-md-12 p-a-0 p-t-1">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a class="text-abhaya" [routerLink]="['/dashboard']">Home</a></li>
+          <li class="breadcrumb-item active text-secondary" aria-current="page">Admin</li>
+          <li class="breadcrumb-item active text-secondary" aria-current="page">Configuration</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <form #configForm="ngForm" name="form" novalidate (ngSubmit)="configForm.valid && executeConfig(configForm)">
+    <div class="row p-t-6 p-r-4 m-a-0">
+      <div class="col-md-6 p-r-0 form-group" [class.has-error]="configForm.submitted && configNamectrl.invalid">
+        <label class="required">Name</label>
+        <input type="text" class="form-control" [(ngModel)]="configName" name="configName" #configNamectrl="ngModel"
+          required />
+        <span class="help-block" *ngIf="configForm.submitted && configNamectrl.errors?.required">
+          Name is required</span>
+      </div>
+
+      <div class="col-md-6 p-r-0 form-group" [class.has-error]="configForm.submitted && configValuectrl.invalid">
+        <label class="required">Value</label>
+        <input type="text" class="form-control" [(ngModel)]="configValue" name="configValue" #configValuectrl="ngModel"
+          required />
+        <span class="help-block" *ngIf="configForm.submitted && configValuectrl.errors?.required">
+          Value is required</span>
+      </div>
+    </div>
+    <div class="row m-a-0">
+      <div class="col-md-6 form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+
+
+
+
+
+
+
+
+  <div class="row no-gutters pt-8">
+    <table class="abhaya-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Value</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let config of configData">
+          <td>{{config.propertyName}}</td>
+          <td>{{config.propertyValue}}</td>
+          <td>
+            <a class="" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false"><i class="icon-ab_more"></i></a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <div class="arrow-up"></div>
+              <a (click)="editConfigDetails(config)" class="dropdown-item">Edit Details</a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+
+
+</div>

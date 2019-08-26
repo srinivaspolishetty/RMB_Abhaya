@@ -1,0 +1,24 @@
+<div class="row no-gutters bdr-bottom p-t-4 p-b-4" *ngIf="isDataExists">
+  <div class="col-md-4">
+    <div class="content-left clearfix">
+      <img src="assets/images/ab-panivalerts.svg">
+    </div>
+    <div class="content-right">
+      <h6 class="p-t-2">Panic Alerts</h6>
+      <h5>{{totalPanic}}</h5>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <h6 class="text-red p-t-2">Device Panic</h6>
+    <h5 class="text-red cursor-hand" (click)="panicDetailView('DEVICE')">{{devicePanicData.openDevicePanic}}</h5>
+  </div>
+  <div class="col-md-2">
+    <h6 class="text-red p-t-2">Mobile Panic</h6>
+    <h5 class="text-red cursor-hand" (click)="panicDetailView('WEB')">{{panicData.openWeb}}</h5>
+  </div>
+  <!-- <div class="col-md-3">
+    <h6 class="text-red p-t-2">Video Panic</h6>
+    <h5 class="text-red cursor-hand" (click)="panicDetailView('MOBILE')">{{panicData.openMobile}}</h5>
+  </div> -->
+</div>
+<app-nodata class="w-100p" *ngIf="!isDataExists" [noDataText]='noDataText'></app-nodata>

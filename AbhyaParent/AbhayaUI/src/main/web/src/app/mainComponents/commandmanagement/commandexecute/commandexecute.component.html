@@ -1,0 +1,68 @@
+<div class="container top-header  p-b-3">
+  <div class="row head-block no-gutters bdr-bottom m-b-3 p-t-1">
+     <div class="col-md-5 p-l-0">
+        <h4>Command Execute</h4>
+     </div>
+     <div class="col-md-12 p-a-0 p-t-1">
+        <nav aria-label="breadcrumb">
+           <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a class="text-abhaya" [routerLink]="['/dashboard']">Home</a></li>
+              <li class="breadcrumb-item active text-secondary" aria-current="page">Command Management</li>
+              <li class="breadcrumb-item active text-secondary" aria-current="page">Command Execute</li>
+           </ol>
+        </nav>
+     </div>
+  </div>
+  <form #commandExeForm="ngForm" name="form" novalidate
+  (ngSubmit)="commandExeForm.valid && executecommand(commandExeForm)">
+  <div class="row p-t-6 p-r-4 m-a-0">
+     <div class="col-md-4 p-r-0 form-group"
+        [class.has-error]="commandExeForm.submitted && executeTypecontrol.invalid">
+        <label class="required">Execute Type</label>
+        <select class="form-control" name="executeType" required #executeTypecontrol="ngModel"
+        [(ngModel)]="executeType" (change)="executechange()">
+        <option value="">Select</option>
+        <option value="SET">SET</option>
+        <option value="GET">GET</option>
+        <option value="CLR">CLR</option>
+        </select>
+        <span class="help-block" *ngIf="commandExeForm.submitted && executeTypecontrol.invalid">
+        Execute Type is required</span>
+     </div>
+     <div class="col-md-4 p-r-0 form-group" [class.has-error]="commandExeForm.submitted && payLoadcontrol.invalid">
+        <label class="required">Payload</label>
+        <select class="form-control" [(ngModel)]="payLoad" name="payLoad" required #payLoadcontrol="ngModel"
+        (change)="payloadchange($event)">
+        <option value="">Select</option>
+        <option *ngFor="let data of payLoadData" [value]="data.payload">{{data.description}}</option>
+        </select>
+        <span class="help-block" *ngIf="commandExeForm.submitted && payLoadcontrol.invalid">
+        Payload is required</span>
+     </div>
+     <div class="col-md-4 p-r-0 form-group"
+        [class.has-error]="commandExeForm.submitted && imeiNumbercontrol.invalid">
+        <label class="required">IMEI Number</label>
+        <select class="form-control" [(ngModel)]="imeiNumber" #imeiNumbercontrol="ngModel" required
+        name="imeiNumber">
+        <option value="">Select IMEI Number</option>
+        <option *ngFor="let device of deviceData" value="{{device.imeiNumber}}">{{device.imeiNumber}}</option>
+        </select>
+        <span class="help-block" *ngIf="commandExeForm.submitted && imeiNumbercontrol.invalid">
+        IMEI Number is required</span>
+     </div>
+     <div class="col-md-4 p-r-0 form-group"
+     [class.has-error]="commandExeForm.submitted && payloadValuecontrol.invalid" *ngIf="propertyValue == true">
+     <label class="required">Value</label>
+     <input type="text" class="form-control" [(ngModel)]="payloadValue" name="payloadValue" 
+     #payloadValuecontrol="ngModel" required /> 
+     <span class="help-block" *ngIf="commandExeForm.submitted && payloadValuecontrol.errors?.required">
+     Value is required</span>              
+       </div>
+</div>
+<div class="row m-a-0">
+  <div class="col-md-6 form-group" *ngIf="showBtn == true">
+     <button type="submit" class="btn btn-primary">{{btnText}}</button>
+  </div>
+</div>
+</form>
+</div>

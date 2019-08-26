@@ -1,0 +1,111 @@
+<div class="modal-header">
+  <h5 class="modal-title">Driver Duty Details of {{selectedDriverDutyDetails.ownerName}}</h5>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.close('refreshContent')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body p-r-2">
+    <div class="modal-newhead">
+        <h5 class="modal-title">Driver Details</h5>
+      </div>
+      <div class="row row-m-b no-gutters">
+          <div class="col-md-3">
+              <img class="img-driver" *ngIf="driverImage !== ''" [src]="driverImage">
+              <img class="img-driver" *ngIf="driverImage == ''" src="assets/images/ic_driverduty.svg" />
+              <!--  <img [src]="driverImage"> -->
+            </div>
+            <div class="col-md-9">
+              <div class="row">
+                <div class="col-md-6">
+                    <h5>Driver Name</h5>
+                    <h4>{{selectedDriverDutyDetails.driverName}}</h4>
+                  </div>
+                  <div class="col-md-6">
+                      <h5>Driver Contact Number</h5>
+                      <h4>{{selectedDriverDutyDetails.driverContactNumber}}</h4>
+                    </div>
+                 
+                      <div class="col-md-6">
+                          <h5>DL Number</h5>
+                          <h4>{{selectedDriverDutyDetails.dlNumber}}</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>DL Expiry Date</h5>
+                            <h4>{{selectedDriverDutyDetails.dlExpiryDate}}</h4>
+                          </div>
+
+                  </div>
+            </div>
+      </div>
+      <div class="modal-newhead">
+          <h5 class="modal-title">Owner Details</h5>
+        </div>
+        <div class="row row-m-b no-gutters">
+            <div class="col-md-3">
+                <img class="img-driver" *ngIf="ownerImage !== ''" [src]="ownerImage">
+                <img class="img-driver" *ngIf="ownerImage == ''" src="assets/images/ic_driverduty.svg" />
+                <!--  <img [src]="driverImage"> -->
+              </div>
+              <div class="col-md-9">
+                <div class="row">
+                  <div class="col-md-6">
+                      <h5>Owner Name</h5>
+                      <h4>{{selectedDriverDutyDetails.ownerName}}</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Owner Contact Number</h5>
+                        <h4>{{selectedDriverDutyDetails.ownerContactNumber}}</h4>
+                      </div> 
+
+                    </div>
+              </div>
+        </div>
+
+
+
+        <div class="modal-newhead">
+            <h5 class="modal-title">Vehicle Details</h5>
+          </div>
+<div class="row">
+    <div class="col-md-6">
+        <h5>Vehicle Name</h5>
+        <h4>{{selectedDriverDutyDetails.vehicleName}}</h4>
+      </div>
+
+      <div class="col-md-6">
+          <h5>Registration Date</h5>
+          <h4>{{selectedDriverDutyDetails.registrationDate}}</h4>
+        </div>
+      <div class="col-md-6">
+          <h5>RC Number</h5>
+          <h4>{{selectedDriverDutyDetails.rcNumber}}</h4>
+        </div>
+        <div class="col-md-6">
+            <h5>RC Expiry Date</h5>
+            <h4>{{selectedDriverDutyDetails.rcExpiryDate}}</h4>
+          </div>
+          <div class="col-md-6">
+              <h5>RF Id</h5>
+              <h4>{{selectedDriverDutyDetails.rfId}}</h4>
+            </div>
+            <div class="col-md-6">
+                <h5>ID No</h5>
+                <h4>{{selectedDriverDutyDetails.sourceId}}</h4>
+              </div>
+                
+        <div class="col-md-6">
+            <h5>Serial Number</h5>
+            <h4>{{selectedDriverDutyDetails.serialNumber}}</h4>
+          </div>
+          <div class="col-md-6">
+            <h5>Packet Date</h5>
+            <h4>{{selectedDriverDutyDetails.packetDate}}</h4>
+          </div>
+          <div class="col-md-6">
+            <h5>packetTime</h5>
+            <h4>{{selectedDriverDutyDetails.packetTime}}</h4>
+          </div>
+</div>
+        
+      
+  </div>

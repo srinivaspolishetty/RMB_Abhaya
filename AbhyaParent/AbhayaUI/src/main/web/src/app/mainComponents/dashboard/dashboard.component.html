@@ -1,0 +1,80 @@
+<div class="container top-header p-b-2">
+  <div class="row head-block no-gutters bdr-bottom m-b-3 p-t-1">
+    <div class="col-md-10 p-l-0">
+      <h4>Dashboard</h4>
+    </div>
+    <div class="col-md-1 p-t-1">
+      <a title="Live Tracking" [routerLink]="['/dashboard']" class="btn-mapviewleft active">
+        <i class="icon-ab-listview"></i>
+      </a>
+      <a title="Map View" [routerLink]="['/dashboard/mapview']" class="btn-mapviewright">
+        <i class="icon-ab-mapview"></i>
+      </a>
+    </div>
+    <div class="col-md-1 p-r-0 text-right">
+      <div class="filters p-t-1">
+        <button type="button" class="filters-button" [ngClass]="{ 'active': showFilters}" (click)="toggleFilters()">
+          <i class="icon-ab-searchfilter"></i>
+          <span>Filters</span>
+        </button>
+        <div class="filters-body " *ngIf="showFilters">
+          <div class="arrow-up"></div>
+          <form name="form" (ngSubmit)="f.form.valid && applyFilters(f)" #f="ngForm" novalidate>
+              <app-citydistrict #validateCityDistrict (isCityDistrictValid)="isCityDistrictValid($event)"
+                [cityDistrictConfig]='cityDistrictConfig'></app-citydistrict>
+  
+              <div class="form-group">
+                <label>DATE</label>
+                <app-datepicker class="form-control bdr-none p-a-0" name="searchDate" [(ngModel)]="searchDate"
+                  #searchDatectrl="ngModel" appForbiddenName="fred"
+                  [ngClass]="{ 'is-invalid': f.submitted && searchDatectrl.invalid }"
+                  [datePickerModel]="datePickerModel" searchDatectrl>
+                </app-datepicker>
+                <div *ngIf="f.submitted && searchDatectrl.invalid" class="invalid-feedback">
+                  <div *ngIf="searchDatectrl.errors.required">Search Date is required</div>
+                </div>
+              </div>
+              <div class="form-group m-t-3">
+                <button class="btn btn-primary w-100p" type="submit">Search</button>
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 p-a-0">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a class="active text-secondary">Dashboard</a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="row p-t-1 no-gutters">
+
+    <div class="main-container-left p-r-10  ">
+      <app-livetracking #liveTrackingView></app-livetracking>
+      <app-panicalerts #panicAlertsView></app-panicalerts>
+      <app-vehicleauth [ngClass]="{ 'd-none': userDetails.departmentName == 'Police'}" #vehicleAuthView></app-vehicleauth>
+      <app-devicestatus [ngClass]="{ 'd-none': userDetails.departmentName == 'Police'}" #deviceStatusView></app-devicestatus>
+
+
+      <div [ngClass]="{ 'd-none': userDetails.departmentName !== 'Police'}" class="row p-t-5">
+        <ngx-charts-bar-vertical [barPadding]="barPadding" [view]="view" [scheme] ="colorScheme" [results]="panicGraphData" [gradient]="gradient" [xAxis]="showXAxis"
+        [yAxis]="showYAxis" [legend]="showLegend" [legendTitle]="'Panic Details'" [legendPosition]="'right'" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel" (select)="onSelect($event)">
+       </ngx-charts-bar-vertical>
+      </div>
+
+
+
+    </div>
+    <div class="main-container-right p-l-2">
+      <app-quickaction #quickActionView></app-quickaction>
+    </div>

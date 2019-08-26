@@ -1,0 +1,92 @@
+<div class="modal-header">
+  <h5 class="modal-title">Details</h5>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.close('refreshContent')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body p-r-2">
+  <form name="form" #administrative="ngForm" novalidate
+    (ngSubmit)="administrative.form.valid && saveupdate()">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Select Type</label>
+          <select class="form-control" [(ngModel)]="selectType" (change)="selectTypeChange()" required name="selectType"
+            #selectTypectrl="ngModel" [ngClass]="{ 'is-invalid': administrative.submitted && selectTypectrl.invalid }">
+            <option value="">-- Select --</option>
+            <option value='district'>District</option>
+            <option value='city'>City</option>
+          </select>
+          <div *ngIf="administrative.submitted && selectTypectrl.invalid" class="invalid-feedback">
+            <span *ngIf="selectTypectrl.errors.required">Please Select a Type</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" *ngIf='showStateFields'>
+        <div class="form-group">
+          <label>State Name</label>
+          <input type="text" class="form-control" [(ngModel)]="defaultStateName" name="defaultStateName" readonly>
+        </div>
+      </div>
+      <div class="col-md-6" *ngIf='showDistrictFields'>
+        <div class="form-group">
+          <label>District Name</label>
+          <input type="text" class="form-control" [(ngModel)]="newDistrictName" name="newDistrictName" required
+            #newDistrictNamectrl="ngModel"
+            [ngClass]="{ 'is-invalid': administrative.submitted && newDistrictNamectrl.invalid }"
+            placeholder="District Name">
+          <div *ngIf="administrative.submitted && newDistrictNamectrl.invalid" class="invalid-feedback">
+            <span *ngIf="newDistrictNamectrl.errors.required">District Name is Required</span>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="col-md-6" *ngIf='showCityFields'>
+        <div class="form-group">
+          <label>Select District</label>
+          <select class="form-control" [(ngModel)]="selectedDistrict" required name="selectedDistrict"
+            #selectedDistrictctrl="ngModel" (change)="districtChange(districtModel, $event)"
+            [ngClass]="{ 'is-invalid': administrative.submitted && selectedDistrictctrl.invalid }">
+            <option value="">-- Select District --</option>
+            <option *ngFor="let district of districtArray" [ngValue]="district.id">{{district.name}}
+            </option>
+          </select>
+          <div *ngIf="administrative.submitted && selectedDistrictctrl.invalid" class="invalid-feedback">
+            <span *ngIf="selectedDistrictctrl.errors.required">District Is Required</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" *ngIf='showCityFields'>
+        <div class="form-group">
+          <label>City Name</label>
+          <input type="text" class="form-control" [(ngModel)]="newCityName" name="newCityName" required
+            #newCityNamectrl="ngModel" [ngClass]="{ 'is-invalid': administrative.submitted && newCityNamectrl.invalid }"
+            placeholder="City Name">
+          <div *ngIf="administrative.submitted && newCityNamectrl.invalid" class="invalid-feedback">
+            <span *ngIf="newCityNamectrl.errors.required">City Name is Required</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" *ngIf='showCityFields'>
+        <div class="form-group">
+          <label>City Code</label>
+          <input type="text" class="form-control" [(ngModel)]="newCityCode" name="newCityCode" required
+            #newCityCodectrl="ngModel" [ngClass]="{ 'is-invalid': administrative.submitted && newCityCodectrl.invalid }"
+            placeholder="City Code">
+          <div *ngIf="administrative.submitted && newCityCodectrl.invalid" class="invalid-feedback">
+            <span *ngIf="newCityCodectrl.errors.required">City Code is Required</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group m-t-3">
+          <button class="btn btn-primary w-100p" type="submit">Save</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

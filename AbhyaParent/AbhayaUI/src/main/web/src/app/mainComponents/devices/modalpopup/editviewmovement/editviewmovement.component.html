@@ -1,0 +1,78 @@
+<div class="modal-header">
+    <h5 class="modal-title">Movement Details of {{selectedMovementDetails.imeiNumber}}</h5>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.close('refreshContent')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body p-r-2">
+    <div class="row">
+          <div class="col-md-6">
+            <h5>ID No</h5>
+           <h4>{{selectedMovementDetails.deviceCommunicationId}}</h4>
+          </div>
+          <div class="col-md-6">
+              <h5>IMEIumber</h5>
+              <h4>{{selectedMovementDetails.imeiNumber}}</h4>
+          </div>
+          <div class="col-md-6">
+            <h5>Longitude</h5>
+            <h4>{{selectedMovementDetails.langitude}}</h4>
+          </div>
+          <div class="col-md-6">
+            <h5>Latitude</h5>
+            <h4>{{selectedMovementDetails.latitude}}</h4>
+          </div>
+          <div class="col-md-6">
+            <h5>Engine Status</h5>
+            <h4>{{selectedMovementDetails.engineStatus}}</h4>
+          </div>
+          <div class="col-md-6">
+            <h5>Ignition Status</h5>
+            <h4>{{selectedMovementDetails.ignitionStatus}}</h4>
+          </div>
+          <div class="col-md-6">
+            <h5>Network Date</h5>
+            <h4>{{selectedMovementDetails.networkDate}}</h4>
+          </div>
+          <div class="col-md-6">
+            <h5>Prev Langitude</h5>
+            <h4>{{selectedMovementDetails.prevLangitude}}</h4>
+          </div>
+          <div class="col-md-6">
+            <h5>Prev Latitude</h5>
+            <h4>{{selectedMovementDetails.prevLatitude}}</h4>
+          </div>
+          <div class="col-md-6">
+            <h5>Created Date</h5>
+            <h4>{{selectedMovementDetails.createdDate}}</h4>
+          </div>
+          <div class="col-md-6">
+            <h5>Location</h5>
+            <h4>{{selectedMovementDetails.location}}</h4>
+          </div>
+          <div class="col-md-6">
+            <h5>Prev Network Date</h5>
+            <h4>{{selectedMovementDetails.prevNetworkDate}}</h4>
+          </div>
+          <div class="col-md-6">
+            <h5>Prev Network Time</h5>
+            <h4>{{selectedMovementDetails.prevNetworkTime}}</h4>
+          </div>
+          <div class="col-md-6">
+            <h5>Panic Status</h5>
+            <h4>{{selectedMovementDetails.emergencyStatus}}</h4>
+          </div>
+          <div class="col-md-6">
+            <h5>Tamper Status</h5>
+            <h4>{{selectedMovementDetails.tamperAlert}}</h4>
+          </div>
+          <div class="col-md-6">
+            <h5>Status</h5>
+            <h4>{{selectedMovementDetails.status}}</h4>
+          </div>
+          <div class="col-md-6">
+            <h5>Is Over Speed</h5>
+            <h4>{{selectedMovementDetails.isDeviceOverSpeed}}</h4>
+          </div>
+    </div>
+  </div>

@@ -1,0 +1,66 @@
+<div class="modal-header">
+  <h5 class="modal-title">Suspicious Vehicle Detail of {{selectedVehicle.imeiNumber}}</h5>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.close('refreshContent')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body p-r-2">
+  <div class="row row-m-b">
+        <div class="col-md-6">
+          <h5>ID No</h5>
+          <h4>{{selectedVehicle.vehicleId}}</h4>
+        </div>
+        <div class="col-md-6">
+          <h5>RC Number</h5>
+          <h4>{{selectedVehicle.rcNumber}}</h4>
+        </div>
+        <div class="col-md-6">
+          <h5>Serial Number</h5>
+          <h4>{{selectedVehicle.serialNumber}}</h4>
+        </div>
+        <div class="col-md-6">
+          <h5>IMEI Number</h5>
+          <h4>{{selectedVehicle.imeiNumber}}</h4>
+        </div>
+        <div class="col-md-6">
+          <h5>Langitude</h5>
+          <h4>{{selectedVehicle.langitude}}</h4>
+        </div>
+        <div class="col-md-6">
+          <h5>Latitude</h5>
+          <h4>{{selectedVehicle.latitude}}</h4>
+        </div>
+        <div class="col-md-6">
+          <h5>Location</h5>
+          <h4>{{selectedVehicle.location}}</h4>
+        </div>
+        <div class="col-md-6">
+          <h5>Status</h5>
+          <h4>{{selectedVehicle.status}}</h4>
+        </div>
+        <div class="col-md-6">
+          <h5>Movement</h5>
+          <h4>{{selectedVehicle.movement}}</h4>
+        </div>
+        <div class="col-md-6">
+          <h5>Ignition Status</h5>
+          <h4>{{selectedVehicle.ignitionStatus}}</h4>
+        </div>
+        <div class="col-md-6">
+          <h5>engine Status</h5>
+          <h4>{{selectedVehicle.engineStatus}}</h4>
+        </div>
+        <div class="col-md-6">
+          <h5>State Name</h5>
+          <h4>{{selectedVehicle.stateName}}</h4>
+        </div>
+        <div class="col-md-6">
+          <h5>District Name</h5>
+          <h4>{{selectedVehicle.districtName}}</h4>
+        </div>
+        <div class="col-md-6">
+          <h5>City Name</h5>
+          <h4>{{selectedVehicle.cityName}}</h4>
+        </div>
+  </div>
+</div>

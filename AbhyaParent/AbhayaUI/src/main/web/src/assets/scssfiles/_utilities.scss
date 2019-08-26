@@ -1,0 +1,138 @@
+.dropdown-item:active {
+  background-color: transparent !important;
+  color:$abhaya-primary-color !important;
+  font-weight:500;
+}
+.ngx-pagination .pagination-previous a::before,
+.ngx-pagination .pagination-previous.disabled::before {
+  content: "<" !important;
+}
+.ngx-pagination .pagination-next a::after,
+.ngx-pagination .pagination-next.disabled::after {
+  content: ">" !important;
+}
+.form-control.bdr-none input {
+  width: 100%;
+}
+agm-map {
+  width: 100%;
+  height: calc(100vh - 320px) !important;
+}
+.map-frame {
+  border: none;
+  width: 100%;
+  height: calc(100vh - 150px) !important;
+}
+.sk-wave {
+  background-image: url(assets/images/ic_auto.png);
+  content: "Loading....";
+  background-size: contain;
+  width: 50px !important;
+  height: 50px !important;
+  z-index: 99 !important;
+  opacity: 1 !important;
+}
+.sk-rect,
+.sk-rect1,
+.sk-rect2,
+.sk-rect3,
+.sk-rect4,
+.sk-rect5 {
+  display: none !important;
+}
+#spinner {
+  background-color: #cccccc !important;
+}
+.loginerror,
+.help-block {
+  color: $red;
+}
+
+.qrcode-download {
+  position: fixed;
+  top: -1000px;
+  left: -1000px;
+  margin: 0;
+  padding: 258px 0px 0px 195px;
+  width: 600px;
+  height: 850px;
+  background-image: url(assets/images/QR-Sticker2.svg);
+}
+.qrcode-download-image {
+  margin: auto;
+  padding: 0;
+}
+.qrcode-download-image img {
+  width: 220px !important;
+}
+.qrcode-download-image h1 {
+  display: inline-block;
+  padding: 0px;
+  color: #ffffff;
+  margin-top: 90px;
+  margin-left: -30px;
+  font-size: 50px;
+}
+
+
+.panictotal{
+  margin:0px;
+  padding:0pc;
+  position: absolute;
+  margin-top:-85px;
+  font-weight:bold;
+  color:$red;
+}
+.circle {
+	border-radius: 50%;
+	background-color: #e11c23;
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	opacity: 0;
+	animation: scaleIn 4s infinite cubic-bezier(.20, .11, .86, .32);
+}
+.alert_style {
+	width: 200px;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+  position: fixed;
+  bottom: 80px;
+  right: 0px;
+  z-index: 99999;
+}
+
+.bell_icon i {
+  margin-top: -12px;
+  font-size: 40px;
+	color: $white;
+	z-index: 99999999;
+}
+
+@keyframes scaleIn {
+	from {
+		transform: scale(.8, .8);
+		opacity: .6;
+	}
+	to {
+		transform: scale(2.2, 2.2);
+		opacity: 0;
+	}
+}
+.legend-labels{
+  background:transparent !important;
+  max-height: 136px !important;
+}
+.chart-legend .legend-label-text {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 15px;
+  font-size: 10px !important;
+  width: calc(100% - 18px);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

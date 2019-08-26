@@ -1,0 +1,27 @@
+<div class="row no-gutters bdr-bottom p-t-4 p-b-4" *ngIf="isDataExists">
+    <div class="col-md-4">
+      <div class="content-left clearfix">
+        <img src="assets/images/ab-vehicleauth.svg">
+      </div>
+      <div class="content-right">
+        <h6 class="p-t-2">Vehicle</h6>
+        <h6 class="">Authentication</h6>
+        <h5>{{vehicleAuthData.total}}</h5>
+        </div>
+    </div>
+    <div class="col-md-3">
+      <h6 class="p-t-2">Authenticated</h6>
+      <a (click)="authVehicleRoute(true)">
+          <h5 class="cursor-hand">{{vehicleAuthData.auth}}</h5>
+      </a> 
+    </div>
+    <div class="col-md-3">
+      <h6 class="p-t-2">Un Authenticated</h6>
+      <a (click)="authVehicleRoute(false)">
+          <h5 class="cursor-hand">{{vehicleAuthData.unauth}}</h5>
+      </a>
+      
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+  <app-nodata class="w-100p" *ngIf="!isDataExists" [noDataText]='noDataText'></app-nodata>

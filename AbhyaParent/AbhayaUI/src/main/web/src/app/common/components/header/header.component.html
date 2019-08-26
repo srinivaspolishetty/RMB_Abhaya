@@ -1,0 +1,156 @@
+<div class="navbar-main fixed-top">
+  <nav class="navbar-expand-lg navbar-dark abhaya-color">
+    <button class="navbar-toggler navbar-toggle" type="button" data-toggle="collapse" data-target="#myNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container collapse navbar-collapse" id="myNavbar">
+      <a class="navbar-brand text-white"><i class="icon-ab-helpdesk"></i>HELP DESK</a>
+      <ul class="ml-auto navbar-nav">
+        <!-- <li class="nav-item">
+          <a [routerLink]="['/administrativelist/prodtest']" [routerLinkActive]="['active']" class="nav-link">PROD TEST</a>
+        </li> -->
+        <li class="nav-item">
+          <a [routerLink]="['/dashboard']" [routerLinkActive]="['active']" class="nav-link">DASHBOARD</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">VEHICLES</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a [routerLink]="['/vehicles']" [routerLinkActive]="['active']" class="dropdown-item">Vehicle Details</a>
+            <a *ngIf="userDetails.departmentName !== 'Police'" [routerLink]="['/vehicles/suspiciousvehicles']" [routerLinkActive]="['active']"
+              class="dropdown-item">Suspicious Vehicles</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">DRIVERS</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a [routerLink]="['/drivers']" [routerLinkActive]="['active']" class="dropdown-item">Driver Details</a>
+            <a *ngIf="userDetails.departmentName !== 'Police'" [routerLink]="['/drivers/driverduty']" [routerLinkActive]="['active']" class="dropdown-item">Driver Duty Details</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">TRIPS</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a [routerLink]="['/trip']" [routerLinkActive]="['active']" class="dropdown-item">Trip Details</a>
+            <!-- <a [routerLink]="['/trip/triptracking']"  class="dropdown-item">Trip Tracking</a> -->
+            <a [routerLink]="['/trip/panicalerts']" [routerLinkActive]="['active']" class="dropdown-item">Panic Alerts</a>
+            <a [routerLink]="['/trip/routedeviation']" [routerLinkActive]="['active']" class="dropdown-item">Route Deviation</a>
+            <!-- <a [routerLink]="['/trip/videostreaming']" class="dropdown-item">Video Streaming</a> -->
+          </div>
+        </li>
+        <li *ngIf="userDetails.departmentName !== 'Police'" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">DEVICES</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a [routerLink]="['/devices']" [routerLinkActive]="['active']" class="dropdown-item">Device Details</a>
+            <a [routerLink]="['/devices/communication']" [routerLinkActive]="['active']" class="dropdown-item">Device Communication</a>
+            <a [routerLink]="['/devices/movement']" [routerLinkActive]="['active']" class="dropdown-item">Movement Details</a>
+            <a [routerLink]="['/devices/rawdata']" [routerLinkActive]="['active']" class="dropdown-item">Raw Data</a>
+            <a [routerLink]="['/devices/locationmonitoring']" [routerLinkActive]="['active']" class="dropdown-item">Location Monitoring</a>
+            <a [routerLink]="['/devices/emergencymonitoring']" [routerLinkActive]="['active']" class="dropdown-item">Emergency Monitoring</a>
+            <a [routerLink]="['/devices/healthmonitoring']" [routerLinkActive]="['active']" class="dropdown-item">Health Monitoring</a>
+            <a [routerLink]="['/commandmanagement/commandexecute']" [routerLinkActive]="['active']" class="dropdown-item">Command Execute</a>
+            <a [routerLink]="['/commandmanagement/commandhistory']" [routerLinkActive]="['active']" class="dropdown-item">Command History</a>
+          </div>
+        </li>
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">COMMAND MANAGEMENT</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a [routerLink]="['/commandmanagement/commandexecute']" class="dropdown-item">Command Execute</a>
+            <a [routerLink]="['/commandmanagement/commandhistory']" class="dropdown-item">Command History</a>
+          </div>
+        </li> -->
+        <li *ngIf="userDetails.departmentName !== 'Police'" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">REPORTS</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <!-- <li class="dropdown-submenu">
+                  <a [routerLink]="['/reports']" class="nav-link dropdown-toggle">Trips<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li> <a [routerLink]="['/reports']" class="dropdown-item">Panic</a></li>
+                    <li> <a [routerLink]="['/reports']" class="dropdown-item">Panic</a></li>
+                    <li> <a [routerLink]="['/reports']" class="dropdown-item">Panic</a></li>
+                    
+                  </ul>
+                
+              </li> -->
+              <a [routerLink]="['/reports']" [routerLinkActive]="['active']" class="dropdown-item">Trips</a>
+                <a [routerLink]="['/reports']" [routerLinkActive]="['active']" class="dropdown-item">Panic</a>
+                <a [routerLink]="['/reports']" [routerLinkActive]="['active']" class="dropdown-item">Vehicle</a>
+            </div>
+          </li>
+        <!-- <li class="nav-item">
+          <a [routerLink]="['/reports']" class="nav-link">REPORTS</a>
+        </li> -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">ADMIN</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a *ngIf="userDetails.departmentName !== 'Police'" [routerLink]="['/users']" [routerLinkActive]="['active']" class="dropdown-item">Users</a>
+            <a *ngIf="userDetails.departmentName !== 'Police'" [routerLink]="['/administrativelist']" [routerLinkActive]="['active']" class="dropdown-item">Administrative Hierarchy</a>
+            <a [routerLink]="['/administrativelist/configuration']" [routerLinkActive]="['active']" class="dropdown-item">Configuration</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="header row">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-md-6">
+          <a [routerLink]="['/dashboard']"> <img class="header-img p-l-2 p-a-2 p-r-3" src="assets/images/Logo_RajannaMahilaBadratha.svg" /></a>
+          <a *ngIf="userDetails.departmentName == 'Police'" [routerLink]="['/dashboard']" [routerLinkActive]="['active']"><img class="header-img h62 p-l-3 bdr-left" src="../../../../assets/images/police_command_control2.png"/></a>
+         
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-8 p-t-3">
+              <div class="header-filter bg-grey-light">
+                <form class="form-group">
+                  <div class="header-filter-label float-left">
+                    <label class="text-center">
+                     Vehicle No.
+                    </label>
+                  </div>
+                  <div class="focal-point header-filter-search float-left">
+                    <input name="vehiclesearch" [(ngModel)]="vehicleSearch" class="p-l-2 header-filter-search-box form-control" type="text" placeholder="Search Records">
+                    <button type="button" (click)="searchVehicle()" class="btn-search"><i class="icon-ab-search"></i></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-md-4">
+
+              <div class="header-profile p-t-3">
+                <span class="dropdown-toggle" data-toggle="dropdown">
+                  <span class="float-left">
+                    <img src="assets/images/profile_png.png">
+                  </span>
+                  <h5>{{userDetails.username}}
+                    <br>
+                    <span>Admin</span>
+                  </h5>
+                  <span class="arrow-down"></span>
+                </span>
+
+                <ul class="dropdown-menu dropdown-menu-right m-t-4 m-l-9">
+                  <div class="arrow-up"></div>
+                  <li>
+                    <a class="dropdown-item cursor-hand"> Change Password</a>
+                  </li>
+                  <li><a class="dropdown-item cursor-hand"> Settings</a></li>
+                  <li><a class="dropdown-item cursor-hand" ng-reflect-router-link="/login" href="/login"> Sign Out</a>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

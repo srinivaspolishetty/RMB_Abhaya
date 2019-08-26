@@ -1,0 +1,76 @@
+<div class="modal-header">
+  <h5 class="modal-title">Trip Details of {{selectedTripModel.tripId}}</h5>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.close('refreshContent')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body p-r-2">
+  <div class="row row-m-b">
+    <div class="col-md-6">
+      <h5>ID</h5>
+      <h4>{{selectedTripModel.tripId}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Source</h5>
+      <h4>{{selectedTripModel.sourceLatLang}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Destination</h5>
+      <h4>{{selectedTripModel.destiLatLang}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Destination Location</h5>
+      <h4>{{selectedTripModel.destiLocation}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Request ID</h5>
+      <h4>{{selectedTripModel.requestId}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Created Date</h5>
+      <h4>{{selectedTripModel.createdDate}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Close Time</h5>
+      <h4>{{selectedTripModel.closeTime }}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Request Time</h5>
+      <h4>{{selectedTripModel.requestTime}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Citizen Mobile</h5>
+      <h4>{{selectedTripModel.citizenMobileNumber}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Class of Vehicle</h5>
+      <h4>{{selectedTripModel.classOfVehicle}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>City ID</h5>
+      <h4>{{selectedTripModel.cityId}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>District ID</h5>
+      <h4>{{selectedTripModel.districtId}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>DL Number</h5>
+      <h4>{{selectedTripModel.dlNumber}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Driver Name</h5>
+      <h4>{{selectedTripModel.driverName}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Driver Contact</h5>
+      <h4>{{selectedTripModel.driverContactNumber}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Driver Address</h5>
+      <h4>{{selectedTripModel.driverAddress }}</h4>
+    </div>
+    
+  </div>
+
+</div>

@@ -1,0 +1,90 @@
+<div class="container top-header p-b-3">
+  <div class="row head-block no-gutters bdr-bottom m-b-3 p-t-1">
+    <div class="col-md-5 p-l-0">
+      <h4>Administrative Details</h4>
+    </div>
+    <div class="col-md-7 p-r-0 text-right">
+      <!-- <div class="filters">
+        <button type="button" class="btn btn-primary" (click)="openAdministrative('')">
+          Add list
+        </button>
+      </div> -->
+    </div>
+    <div class="col-md-12 p-a-0 p-t-1">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a class="text-abhaya" [routerLink]="['/dashboard']">Home</a></li>
+          <li class="breadcrumb-item" aria-current="page"><a class="text-abhaya" [routerLink]="['/devices']">Admin</a>
+          </li>
+          <li class="breadcrumb-item active text-secondary" aria-current="page">Administrative Details</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <div class="row no-gutters m-b-3">
+    <div class="col-md-6 p-a-0">
+        <div class="form-group abhaya-table-search focal-point">
+          <i class="icon-ab-search"></i>
+          <input type="text" class="form-control" [(ngModel)]="searchText" (keydown.enter)="getAllDistricts()"
+            placeholder="Search by Vehicle No./IOT No.">
+          <span class="separator"> </span>
+        </div>
+      </div>
+      <div class="col-md-6 p-a-0 text-primary p-t-2 text-right">
+          <button class="btn-back cursor-hand" (click)="showDistricts='false'" *ngIf="!showDistricts">BACK TO DISTRICTS</button>
+      </div>
+  <!-- <div class="col-md-6 p-a-0 text-primary text-right p-t-2">
+    Total Records : <h5 class="total-records-text d-inline-block"> {{page.totalElements}}</h5>
+  </div> -->
+</div>
+
+
+  <div class="row no-gutters pt-8" *ngIf="showDistricts">
+      <table class="abhaya-table">
+        <thead>
+          <tr>
+            <th width="20%x">ID</th>
+            <th class="text-left">District Name</th>
+            <!-- <th>Actions</th> -->
+          </tr>
+        </thead>
+        <tbody *ngIf="isDataExists">
+          <tr *ngFor="let district of districtArray">
+            <td>{{district.id}}</td>
+            <td class="text-left"><a class="cursor-hand d-inline-block" (click)="getCities(district.id)">{{district.name}}</a></td>
+            <!-- <td>
+              <a (click)="openAdministrative(district)" class="dropdown-item"><i class="icon-ic_edit"></i></a>
+            </td> -->
+        </tr>
+        </tbody>
+      </table>
+      <app-nodata class="w-100p" *ngIf="!isDataExists" [noDataText]='noDataText'></app-nodata>
+    </div>
+
+
+
+    <div class="row no-gutters pt-8" *ngIf="!showDistricts">
+        <table class="abhaya-table">
+          <thead>
+            <tr>
+              <th width="20%">ID</th>
+              <th width="50%">City Name</th>
+              <th width="20%">City Code</th>
+              <!-- <th>Actions</th> -->
+            </tr>
+          </thead>
+          <tbody *ngIf="isDataExists">
+            <tr *ngFor="let city of cityarray">
+              <td>{{city.id}}</td>
+              <td>{{city.name}}</td>
+              <td>{{city.code}}</td>
+              <!-- <td>
+                <a (click)="openAdministrative(city)" class="dropdown-item"><i class="icon-ic_edit"></i></a>
+              </td> -->
+          </tr>
+          </tbody>
+        </table>
+        <app-nodata class="w-100p" *ngIf="!isCityDataExists" [noDataText]='noCityDataText'></app-nodata>
+      </div>
+</div>

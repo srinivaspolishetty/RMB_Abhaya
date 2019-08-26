@@ -1,0 +1,95 @@
+<div class="modal-header">
+  <h5 class="modal-title">Emergancy Details of {{selectedEmergencydata.imeiNumber}}</h5>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.close('refreshContent')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body p-r-2">
+  <div class="row">
+
+    <div class="col-md-6">
+      <h5>ID</h5>
+      <h4>{{selectedEmergencydata.ebpPacketDataId}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>IMEI No</h5>
+      <h4>{{selectedEmergencydata.imeiNumber}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Vehicle No</h5>
+      <h4>{{selectedEmergencydata.vehicleRegNo}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Reply No</h5>
+      <h4>{{selectedEmergencydata.replyNumber}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Latitude</h5>
+      <h4>{{selectedEmergencydata.latitude}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Latitude Direction</h5>
+      <h4>{{selectedEmergencydata.latitudeDirection}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Longitude</h5>
+      <h4>{{selectedEmergencydata.longitude}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Longitude Direction</h5>
+      <h4>{{selectedEmergencydata.longitudeDirection}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Distance</h5>
+      <h4>{{selectedEmergencydata.distance}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Speed</h5>
+      <h4>{{selectedEmergencydata.speed}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Network Date</h5>
+      <h4>{{selectedEmergencydata.networkDate}} {{selectedEmergencydata.networkTime}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Packet Status</h5>
+      <h4>{{selectedEmergencydata.packetStaus}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Altitude</h5>
+      <h4>{{selectedEmergencydata.altitude}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>GPS Validity</h5>
+      <h4>{{selectedEmergencydata.gpsValidity}}</h4>
+    </div>
+    <div class="col-md-6" *ngIf="selectedEmergencydata.checksum">
+      <h5>Checksum</h5>
+      <h4>{{selectedEmergencydata.checksum}}</h4>
+    </div>
+    <div class="col-md-6" *ngIf="selectedEmergencydata.endCharacter">
+      <h5>End Character</h5>
+      <h4>{{selectedEmergencydata.endCharacter}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Provider</h5>
+      <h4>{{selectedEmergencydata.provider}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Created Date</h5>
+      <h4>{{selectedEmergencydata.createdDate}}</h4>
+    </div>
+    <div class="col-md-6" *ngIf="selectedEmergencydata.packetType">
+      <h5>Packet Type</h5>
+      <h4>{{selectedEmergencydata.packetType}}</h4>
+    </div>
+    <div class="col-md-6" *ngIf="selectedEmergencydata.packetType">
+      <h5>Checksum</h5>
+      <h4>{{selectedEmergencydata.checksum}}</h4>
+    </div>
+    <div class="col-md-6" *ngIf="selectedEmergencydata.packetType">
+      <h5>Time Stamp</h5>
+      <h4>{{selectedEmergencydata.timestamp}}</h4>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,100 @@
+.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-shadow: 0 0px 0 #fff !important; 
+    opacity: none !important;
+    &:hover{
+        color: $white !important;
+    }
+}
+.modal{
+    &-content{
+        background-color: $white;
+        // padding:20px !important;
+        padding-left:0px;
+    }
+    &-header{
+        background-color: $abhaya-primary-color;
+        // padding:20px;
+        // margin-left: 20px;
+        // padding-right: 0px;
+        // padding-left:0px;
+        // margin-right: 20px;
+        & button{
+            &.close{
+                &:focus{
+                    outline:none;
+                }
+            }
+        }
+    }
+    &-title{
+        font-size:20px;
+        font-weight: bold;
+        color:$white;
+        & span{
+            font-size:12px;
+            color:$navy-blue !important;
+        }
+    }
+    &-body{
+        padding: 8px;
+        margin-left: 40px;
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-right: 35px;
+        max-height: 450px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        &::-webkit{
+            &-scrollbar{
+                width:5px;
+                &-thumb{
+                    background-color:$secondary-color;
+                }
+                &-track{
+                    background-color:#f1f1f1;
+                }
+            }
+        }
+        & h4{
+            color:$navyblue-light;
+            font-size: 15px;
+            font-weight: bold;
+            word-break:break-word;
+        }
+        & h5{
+            color:#8a8a8a;
+            font-size: 14px;
+            // font-weight: bold;
+        }
+        & .row{
+            & .col-md-6{
+                margin-top:20px !important;
+            }
+        }
+    }
+    &-subheading{
+        font-size:20px;
+        font-weight: bold;
+        color:$abhaya-primary-color;
+        margin-top:25px;
+    }
+    &-footer{
+        padding:5px;
+    }
+    &-newhead{
+        padding-left:0px;
+        padding-top:10px;
+        padding-bottom: 5px;
+        border-bottom:1px solid #f4f4f4;
+       & h5{
+            font-size:16px;
+            font-weight: bold;
+            color:$abhaya-primary-color;
+       }
+    }
+}

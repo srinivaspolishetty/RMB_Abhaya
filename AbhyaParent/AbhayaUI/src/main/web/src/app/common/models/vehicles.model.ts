@@ -1,0 +1,30 @@
+export class vehiclesModel {
+    public vehicleId: number;
+    public rcNumber: string;
+    public image: string;
+    public registrationDate: string;
+    public ownerContactNumber: string;
+    public createdDate: string;
+    public serialNumber: string;
+    public isOwner: boolean;
+    public isDeviceMapped: boolean;
+    public rcExpiryDate: string;
+    public classOfVehicle: string;
+    public classOfVehicleDesc: string;
+    public officeCode: string;
+    public officeName: string;
+    public stateId: Number;
+    public districtsId: Number;
+    public cityId: Number;
+    public stateName: string;
+    public districtsName: string;
+    public cityName: string;
+    public makersModel: string;
+    public chassisNumber: string;
+    public engineNumber: string;
+    public ownerName: string;
+    public color: string;
+    public status: string;
+    public deviceMappedDate : string;
+    public ownerDetailsOwnerImage : string;
+}

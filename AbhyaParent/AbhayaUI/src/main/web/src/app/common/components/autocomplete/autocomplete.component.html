@@ -1,0 +1,12 @@
+<form #autoCompleteForm="ngForm">
+<div class="form-group">
+<input type="text" class="form-control" placeholder="Search By IMEI/Vehicle No" [(ngModel)]="searchValue"  name="searchcontrol" #searchcontrol="ngModel" (keyup)="autoCompleteForm.valid && autocompleteData($event.target.value)" (change)="autoCompleteForm.valid && searchFileterData($event.target.value)" pattern="{{ validations.CMDEXE_VAL_PATTERN }}" list="dynmicData" autocomplete="off" />
+<datalist id="dynmicData">
+<option *ngFor="let item of masterArray" [value]="item.imeiNumber">{{item.imeiNumber}}</option>
+</datalist>
+<span class="text-red help-block" *ngIf="searchcontrol.errors?.pattern">Special Characters are not allowed</span>
+<!-- <button type="button" class="btn-close close" aria-label="Close">
+<span aria-hidden="true" (click)="clearSearch();" *ngIf="showSearchClear">&times;</span>
+</button> -->
+</div>
+</form>

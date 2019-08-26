@@ -1,0 +1,133 @@
+<div class="container top-header p-b-3">
+  <div class="row head-block no-gutters bdr-bottom m-b-5 p-t-1">
+      <div class="col-md-5 p-l-0">
+        <h4>Reports</h4>
+      </div>
+      
+      <div class="col-md-12 p-a-0 p-t-1">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="text-abhaya" [routerLink]="['/dashboard']">Home</a></li>
+            <li class="breadcrumb-item active text-secondary" aria-current="page">Reports</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- <div class="row no-gutters m-b-3">
+        <div class="col-md-6 p-a-0 text-primary p-t-2">
+          Total Records : <h5 class="total-records-text d-inline-block"> {{page.totalElements}}</h5>
+        </div>
+        <div class="col-md-6 p-a-0">
+          <div class="form-group abhaya-table-search">
+            <i class="icon-ab-search"></i>
+            <input type="text" class="form-control" [(ngModel)]="searchText" (keydown.enter)="getDriverDetails()" placeholder="Search by Vehicle No./IOT No.">
+            <span class="separator"> </span>
+          </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="row no-gutters pt-8">
+        <table class="abhaya-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>IMEI No</th>
+              <th>Vehicle Reg No</th>
+              <th>Serial No</th>
+              <th>SIM No</th>
+              <th>IP Address</th>
+              <th>Date</th>
+              <th></th>
+            </tr>
+          </thead>
+         <tbody *ngIf="isDataExists">
+            <tr *ngFor="let driver of driverDetails | paginate: { id: 'systemPropertiespage', itemsPerPage: page.size, currentPage: p, totalItems: page.totalElements }">
+                <td>{{driver.id}}</td>
+                <td>{{driver.imeiNumber}}</td>
+                <td>{{driver.vehicleRegNo}}</td>
+                <td>{{driver.serialNumber}}</td>
+                <td>{{driver.simNumber}}</td>
+                <td>{{driver.ipAddress}}</td>
+                <td>{{driver.createdDate}}</td>
+                <td>
+                   
+                </td>
+              </tr>
+         </tbody>
+         <div *ngIf="!isDataExists">
+            <div class="grid-nodata text-center text-red-medium">
+              <h6>No Data Found</h6>
+            </div>
+          </div>
+        </table>  -->
+        <!--Pagination-->
+        <!-- <div class="row no-gutters w-100p m-t-5">
+            <div *ngIf="isDataExists" class="float-left p-t-1 page-size">
+                <span>Page Size :</span>
+                <select (change)="changePageSize()" [(ngModel)]="pageSize">
+                  <option *ngFor="let number of pageSizeValues" value="{{number}}">{{number}}</option>
+                </select>
+              </div>
+            <div *ngIf="isDataExists" style="margin:0px auto;">
+              <pagination-controls id="systemPropertiespage" class="pagination float-right" (pageChange)="pageChanged($event)" maxSize="6"
+                directionLinks="true" autoHide="true" responsive="true" previousLabel="Prev" nextLabel="Next">
+              </pagination-controls>
+              
+            </div>
+          </div>
+      </div> -->
+
+
+
+
+
+
+
+
+
+      <ngx-charts-line-chart
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="multi"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [autoScale]="autoScale"
+      (select)="onSelect()">
+    </ngx-charts-line-chart>
+
+
+    
+
+
+
+
+      <ngx-charts-pie-chart [view]="pieChart.view" [scheme]="pieChart.colorScheme" [results]="pieChart.data"
+          [legend]="pieChart.showLegend" [explodeSlices]="pieChart.explodeSlices" [labels]="pieChart.showLabels"
+          [doughnut]="pieChart.doughnut" [gradient]="pieChart.gradient" [legendPosition]="pieChart.legendPosition"
+          [arcWidth]="pieChart.arcWidth" [legendTitle]="pieChart.legendTitle" (select)="onPieSliceSelect()">
+        </ngx-charts-pie-chart>
+
+
+
+        <ngx-charts-bar-vertical [view]="view" [scheme] ="colorScheme" [results]="single" [gradient]="gradient" [xAxis]="showXAxis"
+        [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel" (select)="onSelect()">
+       </ngx-charts-bar-vertical>
+
+
+
+
+
+
+
+
+
+
+
+</div>

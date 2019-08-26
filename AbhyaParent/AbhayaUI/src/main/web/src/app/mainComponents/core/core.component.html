@@ -1,0 +1,26 @@
+<div class="alert_style bell_icon cursor-hand" *ngIf="msgs.length > 0" (click)="panicDetailView(msgs[0].isMobile);">
+  <div class="panictotal"> Total Panics: {{panicData}}</div>
+  <i class="icon-bell" ></i>
+  <div class="circle" style="animation-delay: -3s"></div>
+  <div class="circle" style="animation-delay: -2s"></div>
+  <div class="circle" style="animation-delay: -1s"></div>
+  <div class="circle" style="animation-delay: 0s"></div>
+</div>
+
+
+
+  <app-header></app-header>
+  <br><br>
+
+
+
+
+
+  
+
+
+<router-outlet></router-outlet>
+<ng-http-loader [backgroundColor]="'#ff0000'" spinner="sk-wave" class="spinner"></ng-http-loader>            
+
+<br><br>
+<app-footer></app-footer>

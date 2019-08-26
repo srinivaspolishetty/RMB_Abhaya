@@ -1,0 +1,118 @@
+<div class="container top-header p-b-3">
+  <div class="row head-block no-gutters bdr-bottom m-b-3 p-t-1">
+    <div class="col-md-6 p-l-0">
+      <h4>Device Details</h4>
+    </div>
+    <div class="col-md-5 text-right">
+        <span class="btn-circle"><i class="icon-ab_download"></i></span>
+        <span class="btn-circle m-r-1" (click)="refreshPage()"><i class="icon-ab-refresh"></i></span>
+    </div>
+    <div class="col-md-1 p-r-0 text-right">
+      <div class="filters">
+        <button type="button" class="filters-button" [ngClass]="{ 'active': showFilters}" (click)="toggleFilters()">
+          <i class="icon-ab-searchfilter"></i>
+          <span>Filters</span>
+        </button>
+        <div class="filters-body " *ngIf="showFilters">
+          <div class="arrow-up"></div>
+          <form name="form" (ngSubmit)="f.form.valid && applyFilters(f)" #f="ngForm" novalidate>
+            <app-citydistrict #validateCityDistrict (isCityDistrictValid)="isCityDistrictValid($event)"
+              [cityDistrictConfig]='cityDistrictConfig'></app-citydistrict>
+
+            <div class="form-group">
+              <label>DATE</label>
+              <app-datepicker class="form-control bdr-none p-a-0" name="searchDate" [(ngModel)]="searchDate"
+                #searchDatectrl="ngModel" appForbiddenName="fred"
+                [ngClass]="{ 'is-invalid': f.submitted && searchDatectrl.invalid }"
+                [datePickerModel]="datePickerModel" searchDatectrl>
+              </app-datepicker>
+              <div *ngIf="f.submitted && searchDatectrl.invalid" class="invalid-feedback">
+                <div *ngIf="searchDatectrl.errors.required">Search Date is required</div>
+              </div>
+            </div>
+            <div class="form-group m-t-3">
+              <button class="btn btn-primary w-100p" type="submit">Search</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 p-a-0 p-t-1">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a class="text-abhaya" [routerLink]="['/dashboard']">Home</a></li>
+          <li class="breadcrumb-item active text-secondary" aria-current="page">Device Details</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <div class="row no-gutters m-b-3">
+      <div class="col-md-6 p-a-0">
+          <div class="form-group abhaya-table-search focal-point">
+            <i class="icon-ab-search"></i>
+            <input type="text" class="form-control" [(ngModel)]="searchText" (keydown.enter)="getAllDevices()"
+              placeholder="Search IMEI / Vehicle / SIM / IoT No.">
+            <span class="separator"> </span>
+          </div>
+        </div>
+    <div class="col-md-6 p-a-0 text-primary text-right p-t-2">
+      Total Records : <h5 class="total-records-text d-inline-block"> {{page.totalElements}}</h5>
+    </div>
+   
+  </div>
+
+  <div class="row no-gutters pt-8">
+    <table class="abhaya-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>IMEI No</th>
+          <th>Vehicle No</th>
+          <th>IoT No</th>
+          <th>SIM No</th>
+          <th>IP Address</th>
+          <th>Date</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngIf="isDataExists">
+        <tr
+          *ngFor="let details of deviceData | paginate: { id: 'paginationCtrl', itemsPerPage: page.size, currentPage: p, totalItems: page.totalElements }">
+          <td>{{details.id}}</td>
+          <td>{{details.imeiNumber}}</td>
+          <td>{{details.vehicleRegNo}}</td>
+          <td>{{details.serialNumber}}</td>
+          <td>{{details.simNumber}}</td>
+          <td>{{details.ipAddress}}</td>
+          <td>{{details.createdDate}}</td>
+          <td>
+            <a class="" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false"><i class="icon-ab_more"></i></a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <div class="arrow-up"></div>
+              <a (click)="editviewdevices(details, 'view')" class="dropdown-item">View Details</a>
+              <a (click)="editviewdevices(details, 'edit')" class="dropdown-item">Edit Details</a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <app-nodata class="w-100p" *ngIf="!isDataExists" [noDataText]='noDataText'></app-nodata>
+    <div class="row no-gutters w-100p m-t-5">
+        <div *ngIf="isDataExists" class="float-left p-t-1 page-size">
+            <span>Page Size :</span>
+            <select (change)="changePageSize()" [(ngModel)]="pageSize">
+              <option *ngFor="let number of pageSizeValues" value="{{number}}">{{number}}</option>
+            </select>
+          </div>
+      <div *ngIf="isDataExists" style="margin:0px auto;">
+        <pagination-controls id="paginationCtrl" class="pagination float-right" (pageChange)="pageChanged($event)"
+          maxSize="6" directionLinks="true" autoHide="true" responsive="true" previousLabel="Prev" nextLabel="Next">
+        </pagination-controls>
+     
+      </div>
+    </div>
+
+  </div>
+</div>

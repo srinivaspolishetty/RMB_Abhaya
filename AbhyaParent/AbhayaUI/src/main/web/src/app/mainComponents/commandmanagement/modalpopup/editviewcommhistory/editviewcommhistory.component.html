@@ -1,0 +1,57 @@
+<div class="modal-header">
+    <h5 class="modal-title">Command History Details of {{selectedCommandDetails.imeiNumber}}</h5>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.close('refreshContent')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body p-r-2">
+    <div class="row">
+      <div class="col-md-6">
+        <h5>ID</h5>
+        <h4>{{selectedCommandDetails.taskId}}</h4>
+      </div>
+      <div class="col-md-6">
+        <h5>IMEI Number</h5>
+        <h4>{{selectedCommandDetails.imeiNumber}}</h4>
+      </div>
+      <div class="col-md-6">
+        <h5>Mobile Number</h5>
+        <h4>{{selectedCommandDetails.mobileNumber}}</h4>
+      </div>
+      <div class="col-md-6">
+        <h5>Description</h5>
+        <h4>{{selectedCommandDetails.description}}</h4>
+      </div>
+      <div class="col-md-6">
+        <h5>Created Date</h5>
+        <h4>{{selectedCommandDetails.createdDate}}</h4>
+      </div>
+      <div class="col-md-6">
+        <h5>Random Code</h5>
+        <h4>{{selectedCommandDetails.randomCode}}</h4>
+      </div>
+      <div class="col-md-6">
+        <h5>Reply Gateway Number</h5>
+        <h4>{{selectedCommandDetails.replyGatewayNumber}}</h4>
+      </div>
+      <div class="col-md-6">
+        <h5>Request Command Name</h5>
+        <h4>{{selectedCommandDetails.requestCommandName}}</h4>
+      </div>
+      <div class="col-md-6">
+        <h5>SMS Status</h5>
+        <h4>{{selectedCommandDetails.smsStatus}}</h4>
+      </div>
+      <div class="col-md-6">
+        <h5>Device Response Status</h5>
+        <h4>{{selectedCommandDetails.deviceResponseStatus}}</h4>
+      </div>
+      <div class="col-md-6">
+          <h5>Header</h5>
+          <h4>{{selectedCommandDetails.header}}</h4>
+        </div>
+        <div class="col-md-6">
+          <h5>Payload</h5>
+          <h4>{{selectedCommandDetails.payload}}</h4>
+        </div>
+  </div>

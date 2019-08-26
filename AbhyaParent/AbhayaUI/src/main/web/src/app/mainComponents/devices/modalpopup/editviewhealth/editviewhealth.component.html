@@ -1,0 +1,71 @@
+<div class="modal-header">
+  <h5 class="modal-title">Health Details of {{selectedHealthDetails.imeiNumber}}</h5>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.close('refreshContent')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body p-r-2">
+  <div class="row">
+
+    <div class="col-md-6">
+      <h5>ID</h5>
+      <h4>{{selectedHealthDetails.hmpPacketDataId}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>IMEI No</h5>
+      <h4>{{selectedHealthDetails.imeiNumber}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Vendor ID</h5>
+      <h4>{{selectedHealthDetails.vendorId}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Firmware Version</h5>
+      <h4>{{selectedHealthDetails.firmwareVersion}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Analog IO Status</h5>
+      <h4>{{selectedHealthDetails.analogIOStatus}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Digital IO Status</h5>
+      <h4>{{selectedHealthDetails.digitalIOStatus}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Battery Percentage</h5>
+      <h4>{{selectedHealthDetails.batteryPercentage}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Memory Percentage</h5>
+      <h4>{{selectedHealthDetails.memoryPercentage}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Network Date</h5>
+      <h4>{{selectedHealthDetails.networkDate}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Network Time</h5>
+      <h4>{{selectedHealthDetails.networkTime}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Low Battery Thr Value</h5>
+      <h4>{{selectedHealthDetails.lowBatteryThrValue}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>End Of Packet</h5>
+      <h4>{{selectedHealthDetails.endOfPacket}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Data Update ON</h5>
+      <h4>{{selectedHealthDetails.dataUpdateON}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Data Update OFF</h5>
+      <h4>{{selectedHealthDetails.dataUpdateOFF}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Created Date</h5>
+      <h4>{{selectedHealthDetails.createdDate}}</h4>
+    </div>
+  </div>
+</div>

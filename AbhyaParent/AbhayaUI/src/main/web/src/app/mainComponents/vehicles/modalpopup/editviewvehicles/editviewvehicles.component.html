@@ -1,0 +1,131 @@
+<div class="modal-header">
+  <h5 class="modal-title">Vehicle Details of {{selectedVehicleDetails.rcNumber}}</h5>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.close('refreshContent')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body p-r-2">
+
+    <div class="modal-newhead">
+        <h5 class="modal-title">Vehicle Owner Details</h5>
+      </div>
+    <div class="row row-m-b no-gutters">
+        <div class="col-md-3">
+            <img class="img-driver" *ngIf="ownerDetailsOwnerImage !== ''" [src]="ownerDetailsOwnerImage">
+            <img class="img-driver" *ngIf="ownerDetailsOwnerImage == ''" src="assets/images/ic_driverduty.svg" />
+            <!-- <img [src]="ownerDetailsOwnerImage"> -->
+          </div>
+        <div class="col-md-9">
+          <div class="row">
+            <!-- <div class="col-md-6">
+                <h5>Is Owner</h5>
+                <h4>{{selectedVehicleDetails.isOwner}}</h4>
+            </div> -->
+            <div class="col-md-6">
+                <h5>Owner Name</h5>
+                <h4>{{selectedVehicleDetails.ownerName}}</h4>
+                <!-- <img [src]="ownerDetailsOwnerImage"> -->
+              </div>
+              <div class="col-md-6">
+                <h5>Owner Contact No</h5>
+                <h4>{{selectedVehicleDetails.ownerContactNumber}}</h4>
+              </div>
+              <div class="col-md-12 p-t-3">
+                  <h5>Address</h5>
+                  <h4>{{selectedVehicleDetails.stateName}}, {{selectedVehicleDetails.districtsName}}, {{selectedVehicleDetails.cityName}}</h4>
+                </div>
+          </div>
+          </div>
+    </div>
+    <div class="modal-newhead">
+        <h5 class="modal-title">Vehicle Details</h5>
+      </div>
+  <div class="row row-m-b">
+    <div class="col-md-6">
+      <h5>ID</h5>
+      <h4>{{selectedVehicleDetails.vehicleId}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Vehicle No</h5>
+      <h4>{{selectedVehicleDetails.rcNumber}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Engine No</h5>
+      <h4>{{selectedVehicleDetails.engineNumber}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Chasis No</h5>
+      <h4>{{selectedVehicleDetails.chassisNumber}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Maker Model</h5>
+      <h4>{{selectedVehicleDetails.makersModel}}</h4>
+    </div>
+   
+    <div class="col-md-6">
+      <h5>Registration Date</h5>
+      <h4>{{selectedVehicleDetails.registrationDate}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>RC Expiry Date</h5>
+      <h4>{{selectedVehicleDetails.rcExpiryDate}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Class of Vehicle</h5>
+      <h4>{{selectedVehicleDetails.classOfVehicle}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Class of Vehicle Description</h5>
+      <h4>{{selectedVehicleDetails.classOfVehicleDesc}}</h4>
+    </div>
+  
+   
+    <div class="col-md-6">
+      <h5>IoT No</h5>
+      <h4>{{selectedVehicleDetails.serialNumber}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Is Device Mapped</h5>
+      <h4>{{selectedVehicleDetails.isDeviceMapped}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Device Mapped Date</h5>
+      <h4>{{selectedVehicleDetails.deviceMappedDate}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>Created Date</h5>
+      <h4>{{selectedVehicleDetails.createdDate}}</h4>
+    </div>
+    <div class="col-md-6">
+     
+    </div>
+    <div class="col-md-6">
+      <h5>RTO Office Code</h5>
+      <h4>{{selectedVehicleDetails.officeCode}}</h4>
+    </div>
+    <div class="col-md-6">
+      <h5>RTO Office</h5>
+      <h4>{{selectedVehicleDetails.officeName}}</h4>
+    </div>
+
+    <div class="col-md-6">
+      <h5>State</h5>
+      <h4>{{selectedVehicleDetails.stateName}}</h4>
+    </div>
+   
+    <div class="col-md-6">
+      <h5>District</h5>
+      <h4>{{selectedVehicleDetails.districtsName}}</h4>
+    </div> 
+    
+    <div class="col-md-6">
+      <h5>City</h5>
+      <h4>{{selectedVehicleDetails.cityName}}</h4>
+    </div>
+
+   
+
+  </div>
+
+
+</div>
